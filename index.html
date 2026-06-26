@@ -3,1095 +3,185 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Viva's Creative Corner | Art, Dance & Basketball</title>
-    <!-- Tailwind CSS for modern responsive styling -->
+    <title>Ananya's Creative Corner - Personal Portfolio</title>
+    <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        marigold: {
-                            50: '#fffbeb',
-                            100: '#fef3c7',
-                            200: '#fde68a',
-                            300: '#fcd34d',
-                            400: '#fbbf24',
-                            500: '#f59e0b',
-                            600: '#d97706',
-                            700: '#b45309',
-                        },
-                        terracotta: {
-                            50: '#fff1f2',
-                            100: '#ffe4e6',
-                            200: '#fecdd3',
-                            300: '#fda4af',
-                            400: '#fb7185',
-                            500: '#f43f5e',
-                            600: '#e11d48',
-                            700: '#be123c',
-                        },
-                        peacock: {
-                            50: '#f0fdfa',
-                            100: '#ccfbf1',
-                            200: '#99f6e4',
-                            300: '#5eead4',
-                            400: '#2dd4bf',
-                            500: '#14b8a6',
-                            600: '#0d9488',
-                            700: '#0f766e',
-                        }
-                    },
-                    fontFamily: {
-                        playful: ['Quicksand', 'sans-serif'],
-                        elegant: ['Playfair Display', 'serif'],
-                    }
-                }
-            }
-        }
-    </script>
-    <!-- Google Fonts for rich typography -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
-    <!-- Font Awesome for vibrant UI icons -->
+    <!-- Google Fonts for premium Indian/Modern typography mix -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* Custom artistic background pattern to emulate watercolor textures */
         body {
-            background-color: #fffdf9;
-            background-image: 
-                radial-gradient(circle at 10% 20%, rgba(254, 243, 199, 0.4) 0%, transparent 40%),
-                radial-gradient(circle at 90% 80%, rgba(204, 251, 241, 0.4) 0%, transparent 45%),
-                radial-gradient(circle at 50% 50%, rgba(255, 228, 230, 0.3) 0%, transparent 50%);
-            background-attachment: fixed;
-            font-family: 'Quicksand', sans-serif;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: linear-gradient(135deg, #fdf6f6 0%, #fffbf2 50%, #f4fbf7 100%);
         }
-
-        /* Handwritten font feel for scrapbook sections */
-        .handwritten {
+        h1, h2, h3, h4, .serif-font {
             font-family: 'Playfair Display', serif;
-            font-style: italic;
         }
-
-        /* Polaroid rotation classes for the travel journal styling */
-        .polaroid-tilt-left {
-            transform: rotate(-2deg);
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 8px;
         }
-        .polaroid-tilt-right {
-            transform: rotate(3deg);
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #fff5f5;
         }
-        .polaroid-tilt-left-more {
-            transform: rotate(-4deg);
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #fecdd3;
+            border-radius: 9999px;
         }
-
-        /* Floating animations for canvas heart hits */
-        @keyframes float-up {
-            0% { transform: translateY(0) scale(1); opacity: 1; }
-            100% { transform: translateY(-80px) scale(1.4); opacity: 0; }
+        /* Creative floating animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-12px) rotate(1.5deg); }
         }
-        .heart-bubble {
-            animation: float-up 1s ease-out forwards;
+        .art-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes spin-slow {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .spin-slow {
+            animation: spin-slow 15s linear infinite;
+        }
+        /* Smooth scale transitions */
+        .hover-card {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .hover-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px -15px rgba(225, 29, 72, 0.12);
         }
     </style>
 </head>
-<body class="text-slate-800 selection:bg-marigold-200">
+<body class="custom-scrollbar overflow-x-hidden text-neutral-800 antialiased selection:bg-rose-100 selection:text-rose-900">
 
-    <!-- Sticky Navigation Bar with modern Glassmorphism -->
-    <nav class="sticky top-0 z-50 bg-white/70 backdrop-blur-md border-b border-marigold-100 transition-all duration-300">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16">
-                <!-- Artistic Logo / Brand -->
-                <div class="flex-shrink-0 flex items-center gap-2">
-                    <span class="w-10 h-10 rounded-full bg-gradient-to-tr from-marigold-400 via-terracotta-400 to-peacock-400 flex items-center justify-center text-white font-bold text-lg shadow-md animate-bounce">
-                        V
-                    </span>
-                    <span class="font-elegant font-bold text-xl tracking-wide bg-gradient-to-r from-terracotta-600 to-marigold-600 bg-clip-text text-transparent">Viva's Corner</span>
+<!-- Navigation bar with smooth rose gold details -->
+<nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-rose-100 shadow-sm transition-all duration-300">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+            <div class="flex items-center gap-2.5">
+                <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-rose-500 to-amber-500 flex items-center justify-center text-white shadow-md shadow-rose-500/20">
+                    <i class="fa-solid fa-wand-magic-sparkles text-sm animate-pulse"></i>
                 </div>
-                <!-- Main Desktop Navigation Links -->
-                <div class="hidden md:flex space-x-6">
-                    <a href="#hero" class="text-slate-600 hover:text-terracotta-500 font-semibold transition-colors duration-200 flex items-center gap-1">
-                        <i class="fa-solid fa-house text-sm text-marigold-500"></i> Home
-                    </a>
-                    <a href="#craft-studio" class="text-slate-600 hover:text-terracotta-500 font-semibold transition-colors duration-200 flex items-center gap-1">
-                        <i class="fa-solid fa-palette text-sm text-peacock-500"></i> Craft Studio
-                    </a>
-                    <a href="#travel-log" class="text-slate-600 hover:text-terracotta-500 font-semibold transition-colors duration-200 flex items-center gap-1">
-                        <i class="fa-solid fa-compass text-sm text-terracotta-500"></i> Travel Log
-                    </a>
-                    <a href="#court-stage" class="text-slate-600 hover:text-terracotta-500 font-semibold transition-colors duration-200 flex items-center gap-1">
-                        <i class="fa-solid fa-masks-theater text-sm text-amber-600"></i> Court & Stage
-                    </a>
-                    <a href="#quiz-zone" class="text-slate-600 hover:text-terracotta-500 font-semibold transition-colors duration-200 flex items-center gap-1">
-                        <i class="fa-solid fa-wand-magic-sparkles text-sm text-purple-500"></i> Fun Zone
-                    </a>
-                </div>
-                <!-- Interactive Theme Indicator / Dynamic Badge -->
-                <div class="flex items-center gap-3">
-                    <span class="bg-gradient-to-r from-peacock-100 to-marigold-100 text-peacock-800 text-xs px-3 py-1.5 rounded-full font-bold shadow-sm flex items-center gap-1">
-                        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span> Active 11y/o Creator
-                    </span>
-                    <!-- Mobile Hamburger -->
-                    <button id="mobile-menu-btn" class="md:hidden text-slate-600 hover:text-terracotta-500 p-2 rounded focus:outline-none" aria-label="Menu">
-                        <i class="fa-solid fa-bars text-xl"></i>
-                    </button>
-                </div>
+                <span class="serif-font font-bold text-xl sm:text-2xl tracking-wide bg-gradient-to-r from-rose-600 via-amber-600 to-emerald-600 bg-clip-text text-transparent">Ananya's Corner</span>
             </div>
+            <!-- Desktop Nav Links -->
+            <div class="hidden md:flex items-center gap-7 text-sm font-semibold text-neutral-600">
+                <a href="#about" class="hover:text-rose-600 transition-colors flex items-center gap-1.5"><i class="fa-solid fa-address-card text-rose-400"></i> About</a>
+                <a href="#crafts" class="hover:text-amber-600 transition-colors flex items-center gap-1.5"><i class="fa-solid fa-palette text-amber-400"></i> Crafts & Art</a>
+                <a href="#sports" class="hover:text-orange-600 transition-colors flex items-center gap-1.5"><i class="fa-solid fa-basketball text-orange-400"></i> Basketball</a>
+                <a href="#dance" class="hover:text-rose-600 transition-colors flex items-center gap-1.5"><i class="fa-solid fa-shoe-prints text-rose-400"></i> Kathak</a>
+                <a href="#travel" class="hover:text-emerald-600 transition-colors flex items-center gap-1.5"><i class="fa-solid fa-compass text-emerald-400"></i> Travel Journal</a>
+                <a href="#vibe-quiz" class="bg-rose-500 text-white px-5 py-2.5 rounded-full hover:bg-rose-600 transition-all shadow-md hover:shadow-lg hover:shadow-rose-500/20 flex items-center gap-1.5"><i class="fa-solid fa-lightbulb"></i> Daily Vibe</a>
+            </div>
+            <!-- Mobile Menu Toggle -->
+            <button onclick="toggleMobileMenu()" class="md:hidden text-neutral-600 hover:text-rose-600 focus:outline-none p-2 rounded-lg hover:bg-neutral-50 transition-colors">
+                <i id="menuIcon" class="fa-solid fa-bars text-xl"></i>
+            </button>
         </div>
-        <!-- Mobile Dropdown Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white/95 border-b border-marigold-100 backdrop-blur-md">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 text-center">
-                <a href="#hero" class="block px-3 py-2 rounded-md text-base font-semibold text-slate-700 hover:bg-marigold-50 hover:text-terracotta-500">Home</a>
-                <a href="#craft-studio" class="block px-3 py-2 rounded-md text-base font-semibold text-slate-700 hover:bg-marigold-50 hover:text-terracotta-500">Craft Studio</a>
-                <a href="#travel-log" class="block px-3 py-2 rounded-md text-base font-semibold text-slate-700 hover:bg-marigold-50 hover:text-terracotta-500">Travel Log</a>
-                <a href="#court-stage" class="block px-3 py-2 rounded-md text-base font-semibold text-slate-700 hover:bg-marigold-50 hover:text-terracotta-500">Court & Stage</a>
-                <a href="#quiz-zone" class="block px-3 py-2 rounded-md text-base font-semibold text-slate-700 hover:bg-marigold-50 hover:text-terracotta-500">Fun Zone</a>
-            </div>
+    </div>
+    <!-- Mobile dropdown menu -->
+    <div id="mobileMenu" class="hidden md:hidden bg-white/95 border-b border-rose-500/10 px-4 py-4 space-y-3 transition-all duration-300">
+        <a href="#about" onclick="toggleMobileMenu()" class="block text-neutral-600 hover:text-rose-600 font-semibold py-2 px-3 rounded-lg hover:bg-rose-50/50"><i class="fa-solid fa-address-card mr-2.5 text-rose-500"></i>About</a>
+        <a href="#crafts" onclick="toggleMobileMenu()" class="block text-neutral-600 hover:text-amber-600 font-semibold py-2 px-3 rounded-lg hover:bg-amber-50/50"><i class="fa-solid fa-palette mr-2.5 text-amber-500"></i>Crafts & Art</a>
+        <a href="#sports" onclick="toggleMobileMenu()" class="block text-neutral-600 hover:text-orange-600 font-semibold py-2 px-3 rounded-lg hover:bg-orange-50/50"><i class="fa-solid fa-basketball mr-2.5 text-orange-500"></i>Basketball</a>
+        <a href="#dance" onclick="toggleMobileMenu()" class="block text-neutral-600 hover:text-rose-600 font-semibold py-2 px-3 rounded-lg hover:bg-rose-50/50"><i class="fa-solid fa-shoe-prints mr-2.5 text-rose-550"></i>Kathak</a>
+        <a href="#travel" onclick="toggleMobileMenu()" class="block text-neutral-600 hover:text-emerald-600 font-semibold py-2 px-3 rounded-lg hover:bg-emerald-50/50"><i class="fa-solid fa-compass mr-2.5 text-emerald-500"></i>Travel Journal</a>
+        <a href="#vibe-quiz" onclick="toggleMobileMenu()" class="block text-rose-600 font-bold py-2 px-3 rounded-lg bg-rose-50"><i class="fa-solid fa-lightbulb mr-2.5 text-rose-500"></i>Daily Vibe Quiz</a>
+    </div>
+</nav>
+
+<!-- Hero / About Me Header -->
+<header id="about" class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-24 flex flex-col md:flex-row items-center gap-12">
+    <!-- Background sparkles and shapes -->
+    <div class="absolute top-10 left-10 w-24 h-24 bg-rose-200/30 rounded-full blur-2xl -z-10"></div>
+    <div class="absolute bottom-12 right-10 w-36 h-36 bg-amber-200/30 rounded-full blur-3xl -z-10 bg-gradient-to-tr from-amber-200 to-rose-100"></div>
+
+    <!-- Hero Content -->
+    <div class="w-full md:w-1/2 space-y-6 text-center md:text-left">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-rose-100/70 border border-rose-200 text-rose-700 text-xs sm:text-sm font-bold tracking-wider uppercase shadow-sm">
+            <span>✨ Namaste! Welcome to My Creative Corner</span>
         </div>
-    </nav>
-
-    <!-- Main Single Page Content Container -->
-    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-24">
-
-        <!-- 1. HERO SECTION -->
-        <section id="hero" class="relative overflow-hidden pt-4 md:pt-12 pb-8 scroll-mt-20">
-            <!-- Decorative artistic paint splashes -->
-            <div class="absolute top-0 right-0 -z-10 opacity-60 w-64 h-64 pointer-events-none">
-                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                    <path fill="#FDE68A" d="M37.5,-51.2C48.3,-41.4,56.7,-30.1,62,-16.9C67.3,-3.8,69.5,11.3,64.8,24.1C60.1,36.9,48.5,47.4,35.3,55.3C22,63.1,7.2,68.2,-7.1,67.8C-21.4,67.3,-35.1,61.4,-47.5,52C-59.9,42.6,-70.9,29.8,-73.4,15.4C-75.9,0.9,-69.8,-15.1,-60.6,-28.4C-51.5,-41.7,-39.3,-52.3,-26.1,-60.9C-12.8,-69.5,1.5,-76.1,13.2,-72.5C24.9,-69,26.7,-55.3,37.5,-51.2Z" transform="translate(100 100)" />
-                </svg>
-            </div>
-            <div class="absolute -bottom-10 left-0 -z-10 opacity-50 w-72 h-72 pointer-events-none">
-                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                    <path fill="#99F6E4" d="M43.3,-58.5C54.8,-48.3,61.9,-32.7,64.2,-17C66.5,-1.3,64.1,14.6,57.7,29.4C51.3,44.2,41,57.8,26.8,65.2C12.6,72.6,-5.5,73.8,-21.9,68.4C-38.3,63,-53,51,-62,35.7C-71.1,20.4,-74.5,1.9,-71,-15C67.5,-32,57.1,-47.3,43.3,-58.5Z" transform="translate(100 100)" />
-                </svg>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-                <!-- Bio Text Block (Left) -->
-                <div class="md:col-span-7 space-y-6 text-center md:text-left">
-                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gradient-to-r from-marigold-200 to-terracotta-200 text-terracotta-800 text-xs sm:text-sm font-bold shadow-sm animate-pulse">
-                        <i class="fa-solid fa-sparkles text-marigold-600"></i> WELCOME TO MY CREATIVE CORNER!
-                    </div>
-                    <h1 class="font-elegant text-4xl sm:text-5xl lg:text-6xl font-black leading-tight text-slate-800">
-                        My Name is <br class="hidden sm:inline">
-                        <span class="bg-gradient-to-r from-terracotta-500 via-marigold-500 to-peacock-500 bg-clip-text text-transparent">Viva Mansuke</span>
-                    </h1>
-                    
-                    <!-- Direct Handwriting Quote Box -->
-                    <div onclick="openDiaryModal('dreme.jpeg', 'My Dream in Life')" class="bg-amber-50/80 hover:bg-amber-100/80 border-l-4 border-marigold-400 p-5 rounded-r-2xl shadow-sm space-y-3 cursor-pointer transition-all duration-300 relative group">
-                        <p class="font-elegant text-lg sm:text-xl text-slate-800 italic leading-relaxed pr-6">
-                            "I want to become army officer, Navy or an Airfource. I am interested in baseketball, Kathak, drawing, sketch, but I don't draw sketch. But I try to draw sketch and doodle."
-                        </p>
-                        <p class="text-xs font-bold text-slate-500 uppercase tracking-widest text-right flex items-center justify-end gap-1">
-                            <i class="fa-solid fa-magnifying-glass-plus text-slate-400 group-hover:text-terracotta-500"></i> Click to see my original diary page 📝
-                        </p>
-                    </div>
-
-                    <p class="text-base sm:text-lg text-slate-600 leading-relaxed max-w-xl mx-auto md:mx-0">
-                        Welcome to my little universe! I am an active 11-year-old girl from India who loves exploring the great outdoors, crafting beautiful yarn works, and always putting in my 100% effort to learn new things.
-                    </p>
-                    
-                    <!-- Quick highlight tags -->
-                    <div class="flex flex-wrap justify-center md:justify-start gap-2.5 max-w-md mx-auto md:mx-0">
-                        <span class="bg-amber-100 text-amber-800 px-3.5 py-1.5 rounded-full text-xs font-bold shadow-sm border border-amber-200">
-                            <i class="fa-solid fa-shield-halved mr-1 text-amber-600"></i> Future Officer
-                        </span>
-                        <span class="bg-rose-100 text-rose-800 px-3.5 py-1.5 rounded-full text-xs font-bold shadow-sm border border-rose-200">
-                            <i class="fa-solid fa-pen-nib mr-1 text-rose-600"></i> Doodle Enthusiast
-                        </span>
-                        <span class="bg-teal-100 text-teal-800 px-3.5 py-1.5 rounded-full text-xs font-bold shadow-sm border border-teal-200">
-                            <i class="fa-solid fa-basketball mr-1 text-teal-600"></i> Basketball Guard
-                        </span>
-                        <span class="bg-indigo-100 text-indigo-800 px-3.5 py-1.5 rounded-full text-xs font-bold shadow-sm border border-indigo-200">
-                            <i class="fa-solid fa-scissors mr-1 text-indigo-600"></i> Crochet Crafter
-                        </span>
-                    </div>
-                    <!-- Fun Dynamic Call to Action -->
-                    <div class="pt-2 flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
-                        <a href="#quiz-zone" class="bg-gradient-to-r from-terracotta-500 to-marigold-500 text-white font-bold px-6 py-3.5 rounded-full shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 transition-all duration-200 text-center flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-dice"></i> Which Hobby Matches Your Vibe?
-                        </a>
-                        <a href="#craft-studio" class="bg-white border border-slate-200 text-slate-700 font-semibold px-6 py-3.5 rounded-full shadow-sm hover:bg-slate-50 text-center transition-all duration-200">
-                            Browse My Crafts
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Hero Mascot / actual photo portrait frame (Right) -->
-                <div class="md:col-span-5 flex justify-center relative">
-                    <!-- Beautiful modern frame with warm Indian color block design -->
-                    <div class="relative w-72 h-72 sm:w-80 sm:h-80 md:w-full md:h-[420px] bg-gradient-to-tr from-marigold-300 via-rose-300 to-peacock-300 rounded-3xl p-3 shadow-2xl transform rotate-2">
-                        <div class="w-full h-full bg-white rounded-2xl overflow-hidden relative flex flex-col justify-between items-center text-center p-3 border-2 border-dashed border-marigold-200">
-                            <!-- Real Photo display of Viva from WhatsApp Image -->
-                            <div class="w-full h-[85%] rounded-xl overflow-hidden relative group">
-                                <img src="WhatsApp Image 2026-06-21 at 2.39.31 PM.jpeg" alt="Viva Mansuke" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500">
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-3">
-                                    <span class="text-white text-xs font-bold tracking-wide"><i class="fa-solid fa-heart text-rose-500 animate-pulse"></i> Proudly Indian</span>
-                                </div>
-                            </div>
-                            
-                            <div class="py-2">
-                                <h3 class="font-elegant font-black text-xl text-slate-800">Viva Mansuke</h3>
-                                <p class="text-[10px] uppercase tracking-widest text-slate-500 font-bold">Artist • Dancer • Future Officer 🇮🇳</p>
-                            </div>
-                            
-                            <!-- Mini interactive speech bubble overlay -->
-                            <div class="absolute -top-4 -left-4 bg-white px-3 py-2 rounded-xl shadow-lg border border-marigold-100 transform -rotate-6 hidden sm:block">
-                                <span class="text-xs font-bold text-slate-700">💫 Namaste! Welcome to my world!</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 2. THE CRAFT STUDIO (Crochet & Painting) -->
-        <section id="craft-studio" class="scroll-mt-20">
-            <!-- Section Header -->
-            <div class="text-center space-y-3 mb-12">
-                <div class="inline-flex items-center gap-1.5 px-3 py-1 bg-peacock-100 rounded-full text-peacock-800 text-xs font-bold">
-                    <i class="fa-solid fa-paint-brush"></i> THE CRAFT STUDIO
-                </div>
-                <h2 class="font-elegant text-3xl sm:text-4xl font-bold text-slate-800">My Handmade Wonders</h2>
-                <p class="text-slate-600 max-w-xl mx-auto text-sm sm:text-base">
-                    From soft woven yarn accessories to sketches and photos, explore the crafty goodies I love making with my own hands! Tap the hearts to share some love!
-                </p>
-            </div>
-
-            <!-- Beautiful grid layout -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Craft Card 1: Cup Cover -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-slate-100 flex flex-col justify-between group">
-                    <div class="p-4 bg-amber-50/50 flex justify-center items-center h-48 relative overflow-hidden">
-                        <!-- SVG Crochet Cup Cover placeholder -->
-                        <div class="absolute inset-0 bg-gradient-to-tr from-amber-100/50 to-rose-100/30 group-hover:scale-110 transition-transform duration-500"></div>
-                        <svg viewBox="0 0 100 100" class="w-32 h-32 relative z-10 filter drop-shadow-md">
-                            <!-- Mug Outline -->
-                            <rect x="30" y="30" width="36" height="45" rx="4" fill="#cbd5e1" stroke="#94a3b8" stroke-width="2"/>
-                            <!-- Mug Handle -->
-                            <path d="M 66 40 C 78 40, 78 65, 66 65" fill="none" stroke="#cbd5e1" stroke-width="5" stroke-linecap="round"/>
-                            <!-- Cozy Knitted Cup Sleeve / Cover -->
-                            <rect x="28" y="40" width="40" height="25" rx="3" fill="#fb7185" />
-                            <!-- Knitted Cable Details -->
-                            <path d="M33 42 C 35 45, 31 50, 33 53 C 35 56, 31 61, 33 63" fill="none" stroke="#ffe4e6" stroke-width="2" stroke-linecap="round"/>
-                            <path d="M48 42 C 50 45, 46 50, 48 53 C 50 56, 46 61, 48 63" fill="none" stroke="#ffe4e6" stroke-width="2" stroke-linecap="round"/>
-                            <path d="M63 42 C 65 45, 61 50, 63 53 C 65 56, 61 61, 63 63" fill="none" stroke="#ffe4e6" stroke-width="2" stroke-linecap="round"/>
-                            <!-- Cute Heart Badge on Cover -->
-                            <path d="M 48 53 Q 48 50 45 50 Q 42 50 42 53 Q 42 56 48 60 Q 54 56 54 53 Q 54 50 51 50 Q 48 50 48 53 Z" fill="#e11d48"/>
-                        </svg>
-                        <span class="absolute top-3 left-3 bg-rose-500 text-white text-[10px] uppercase font-black tracking-widest px-2.5 py-1 rounded-full">Crochet</span>
-                    </div>
-                    <div class="p-5 space-y-3">
-                        <h3 class="font-bold text-lg text-slate-800">Cozy Mug Warm Cover</h3>
-                        <p class="text-xs text-slate-500 leading-relaxed">Keep your hot chocolate warm! Hand-knit with blush pink yarn, detailed with cables and a little red heart badge.</p>
-                        <div class="flex items-center justify-between pt-2 border-t border-slate-100">
-                            <span class="text-xs font-bold text-peacock-600 uppercase tracking-wider">Jan 2026</span>
-                            <!-- Interactive heart button -->
-                            <button onclick="likeItem('cupcover', this)" class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-50 hover:bg-rose-50 text-slate-400 hover:text-rose-600 transition-all duration-200 active:scale-90 relative">
-                                <i class="fa-solid fa-heart text-sm transition-transform duration-200"></i>
-                                <span class="text-xs font-bold" id="like-count-cupcover">56</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Craft Card 2: Coaster -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-slate-100 flex flex-col justify-between group">
-                    <div class="p-4 bg-teal-50/50 flex justify-center items-center h-48 relative overflow-hidden">
-                        <div class="absolute inset-0 bg-gradient-to-tr from-teal-100/50 to-sky-100/30 group-hover:scale-110 transition-transform duration-500"></div>
-                        <!-- SVG Crochet Sunflower Coaster -->
-                        <svg viewBox="0 0 100 100" class="w-32 h-32 relative z-10 filter drop-shadow-md">
-                            <!-- Center Seed Circle -->
-                            <circle cx="50" cy="50" r="18" fill="#78350f" stroke="#451a03" stroke-width="1.5" stroke-dasharray="3 2"/>
-                            <circle cx="50" cy="50" r="12" fill="#b45309" />
-                            <!-- Radiating Petals -->
-                            <path d="M 50 15 Q 46 25 50 32 Q 54 25 50 15 Z" fill="#fbbf24" stroke="#d97706" stroke-width="0.8"/>
-                            <path d="M 50 68 Q 46 75 50 85 Q 54 75 50 68 Z" fill="#fbbf24" stroke="#d97706" stroke-width="0.8"/>
-                            <path d="M 15 50 Q 25 46 32 50 Q 25 54 15 50 Z" fill="#fbbf24" stroke="#d97706" stroke-width="0.8"/>
-                            <path d="M 68 50 Q 75 46 85 50 Q 75 54 68 50 Z" fill="#fbbf24" stroke="#d97706" stroke-width="0.8"/>
-                            <!-- Diagonal Petals -->
-                            <path d="M 25 25 Q 35 29 37 37 Q 29 35 25 25 Z" fill="#f59e0b" stroke="#d97706" stroke-width="0.8"/>
-                            <path d="M 75 75 Q 65 71 63 63 Q 71 65 75 75 Z" fill="#f59e0b" stroke="#d97706" stroke-width="0.8"/>
-                            <path d="M 75 25 Q 71 35 63 37 Q 65 29 75 25 Z" fill="#f59e0b" stroke="#d97706" stroke-width="0.8"/>
-                            <path d="M 25 75 Q 29 65 37 63 Q 35 71 25 75 Z" fill="#f59e0b" stroke="#d97706" stroke-width="0.8"/>
-                            <!-- Loop Stitch Outer Ring -->
-                            <circle cx="50" cy="50" r="34" fill="none" stroke="#fbbf24" stroke-width="1.5" stroke-dasharray="2 3"/>
-                        </svg>
-                        <span class="absolute top-3 left-3 bg-rose-500 text-white text-[10px] uppercase font-black tracking-widest px-2.5 py-1 rounded-full">Crochet</span>
-                    </div>
-                    <div class="p-5 space-y-3">
-                        <h3 class="font-bold text-lg text-slate-800">Sunny Flower Coaster</h3>
-                        <p class="text-xs text-slate-500 leading-relaxed">A bright sunflower coaster woven using thick wool. Perfect for protecting your study table in style!</p>
-                        <div class="flex items-center justify-between pt-2 border-t border-slate-100">
-                            <span class="text-xs font-bold text-peacock-600 uppercase tracking-wider">Feb 2026</span>
-                            <button onclick="likeItem('coaster', this)" class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-50 hover:bg-rose-50 text-slate-400 hover:text-rose-600 transition-all duration-200 active:scale-90 relative">
-                                <i class="fa-solid fa-heart text-sm"></i>
-                                <span class="text-xs font-bold" id="like-count-coaster">94</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Craft Card 3: Granny's Square -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-slate-100 flex flex-col justify-between group">
-                    <div class="p-4 bg-marigold-50/50 flex justify-center items-center h-48 relative overflow-hidden">
-                        <div class="absolute inset-0 bg-gradient-to-tr from-marigold-100/50 to-orange-100/30 group-hover:scale-110 transition-transform duration-500"></div>
-                        <!-- Granny's Square SVG -->
-                        <svg viewBox="0 0 100 100" class="w-32 h-32 relative z-10 filter drop-shadow-md">
-                            <!-- Outer Layer Square -->
-                            <rect x="15" y="15" width="70" height="70" rx="4" fill="#0d9488" stroke="#0f766e" stroke-width="2"/>
-                            <!-- Inner Layer 2 -->
-                            <rect x="25" y="25" width="50" height="50" rx="3" fill="#f59e0b" stroke="#d97706" stroke-width="2"/>
-                            <!-- Inner Layer 1 -->
-                            <rect x="35" y="35" width="30" height="30" rx="2" fill="#e11d48" stroke="#be123c" stroke-width="2"/>
-                            <!-- Central Core Circle -->
-                            <circle cx="50" cy="50" r="6" fill="#fef08a" stroke="#ca8a04" stroke-width="1.5"/>
-                            <!-- Simulated Crochet Stitch details (dashed patterns) -->
-                            <rect x="18" y="18" width="64" height="64" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-dasharray="3 3"/>
-                            <rect x="28" y="28" width="44" height="44" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-dasharray="3 3"/>
-                            <rect x="38" y="38" width="24" height="24" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-dasharray="2 2"/>
-                        </svg>
-                        <span class="absolute top-3 left-3 bg-rose-500 text-white text-[10px] uppercase font-black tracking-widest px-2.5 py-1 rounded-full">Crochet</span>
-                    </div>
-                    <div class="p-5 space-y-3">
-                        <h3 class="font-bold text-lg text-slate-800">Classic Granny Square</h3>
-                        <p class="text-xs text-slate-500 leading-relaxed">The cornerstone of crochet! I used teal, mustard, and rose pink threads to make this beautifully structured patch.</p>
-                        <div class="flex items-center justify-between pt-2 border-t border-slate-100">
-                            <span class="text-xs font-bold text-peacock-600 uppercase tracking-wider">Mar 2026</span>
-                            <button onclick="likeItem('grannysquare', this)" class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-50 hover:bg-rose-50 text-slate-400 hover:text-rose-600 transition-all duration-200 active:scale-90 relative">
-                                <i class="fa-solid fa-heart text-sm"></i>
-                                <span class="text-xs font-bold" id="like-count-grannysquare">73</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Craft Card 4: Viva's Photo -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-slate-100 flex flex-col justify-between group">
-                    <div class="h-48 relative overflow-hidden bg-purple-50">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10"></div>
-                        <!-- Displaying Viva's uploaded Photo -->
-                        <img src="WhatsApp Image 2026-06-21 at 2.39.31 PM.jpeg" alt="Viva Mansuke Portrait" class="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500">
-                        <span class="absolute top-3 left-3 bg-teal-500 text-white text-[10px] uppercase font-black tracking-widest px-2.5 py-1 rounded-full z-20">Creative Space</span>
-                        <!-- Decorative Marigold Tag -->
-                        <span class="absolute bottom-3 left-3 text-white text-xs font-bold z-20 flex items-center gap-1">
-                            <i class="fa-solid fa-sun text-yellow-400"></i> Viva Mansuke
-                        </span>
-                    </div>
-                    <div class="p-5 space-y-3">
-                        <h3 class="font-bold text-lg text-slate-800">My Studio Portrait ✨</h3>
-                        <p class="text-xs text-slate-500 leading-relaxed">Here I am at my desk with traditional copper plates, sweet yellow marigold flowers, puja thali, brass lamps, and my favorite diaries!</p>
-                        <div class="flex items-center justify-between pt-2 border-t border-slate-100">
-                            <span class="text-xs font-bold text-peacock-600 uppercase tracking-wider">June 2026</span>
-                            <button onclick="likeItem('portrait', this)" class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-50 hover:bg-rose-50 text-slate-400 hover:text-rose-600 transition-all duration-200 active:scale-90 relative">
-                                <i class="fa-solid fa-heart text-sm"></i>
-                                <span class="text-xs font-bold" id="like-count-portrait">186</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 3. THE TRAVEL LOG -->
-        <section id="travel-log" class="scroll-mt-20 relative">
-            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 w-96 h-96 opacity-10 pointer-events-none bg-[radial-gradient(#ec4899_1px,transparent_1px)] [background-size:16px_16px]"></div>
-
-            <div class="text-center space-y-3 mb-12">
-                <div class="inline-flex items-center gap-1.5 px-3 py-1 bg-terracotta-100 rounded-full text-terracotta-800 text-xs font-bold">
-                    <i class="fa-solid fa-plane-departure"></i> EXPLORE & WANDER
-                </div>
-                <h2 class="font-elegant text-3xl sm:text-4xl font-bold text-slate-800">My Travel Log Journal</h2>
-                <p class="text-slate-600 max-w-xl mx-auto text-sm sm:text-base">
-                    Discovering heritage temples, royal forts, and historical spots across India. Read my real travel diaries and click on the pages to see the original handwriting!
-                </p>
-            </div>
-
-            <!-- Polaroid Grid styled with scrapbook effects -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-4 max-w-5xl mx-auto">
-                
-                <!-- Polaroid 1: Nashik (Displaying actual scanned notebook page: nashik.jpeg!) -->
-                <div class="bg-white p-4 pb-8 shadow-lg border border-slate-100 hover:shadow-2xl hover:scale-105 hover:rotate-0 transition-all duration-300 transform polaroid-tilt-left bg-gradient-to-b from-white to-amber-50/10 flex flex-col justify-between group">
-                    <!-- Real diary page displayed inside the polaroid card! -->
-                    <div onclick="openDiaryModal('nashik.jpeg', 'My Trip to Nashik Diary Page')" class="relative overflow-hidden aspect-video bg-sky-100 rounded-lg mb-4 cursor-pointer border border-slate-200">
-                        <img src="nashik.jpeg" alt="Nashik Handwritten Diary Entry" class="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-black/15 group-hover:bg-black/5 transition-colors duration-300 flex items-center justify-center">
-                            <span class="bg-white/90 text-slate-800 px-3 py-1.5 rounded-full text-[10px] font-bold shadow-md flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
-                                <i class="fa-solid fa-magnifying-glass-plus"></i> Zoom Page
-                            </span>
-                        </div>
-                        <!-- Paper tape decor effect -->
-                        <div class="absolute -top-1 left-1/3 w-16 h-5 bg-yellow-100/80 border-b border-yellow-200/50 backdrop-blur-sm -rotate-3 z-20"></div>
-                    </div>
-                    <div class="space-y-3">
-                        <p class="handwritten text-lg font-bold text-slate-700 text-center">My Trip to Nashik ⛵</p>
-                        <!-- Word-for-word copy from nashik.jpeg -->
-                        <div class="bg-amber-50/50 p-3 rounded-lg border border-amber-100/60 max-h-48 overflow-y-auto">
-                            <p class="text-xs text-slate-700 leading-relaxed font-semibold">
-                                "I visited Nashik on 19th March 2026. We had lots of fun there. We visited lots of temples. Like Ram temple, Trimbakeshwar Temple, Kalaram Temple and Goraram Temple. And we visited Gangapur Dam. There we did boating with my father, Cousin Sister, Tushar uncle and Shreyash. We booked a guest house in Devlali cantonment. We went to Iftikar uncles house in the cantonment. He is the 2nd Boss of Devlali cantonment. And Nashik was very clean. I love Nashik so much."
-                            </p>
-                        </div>
-                        <p class="text-[10px] uppercase tracking-widest text-slate-400 font-bold text-center">19th March 2026 • Nashik, Maharashtra</p>
-                    </div>
-                </div>
-
-                <!-- Polaroid 2: Indore -->
-                <div class="bg-white p-4 pb-8 shadow-lg border border-slate-100 hover:shadow-2xl hover:scale-105 hover:rotate-0 transition-all duration-300 transform polaroid-tilt-right bg-gradient-to-b from-white to-emerald-50/10 flex flex-col justify-between group">
-                    <div class="relative overflow-hidden aspect-video bg-emerald-100 rounded-sm mb-4 border border-slate-200">
-                        <!-- Custom Indore Rajwada Palace Illustration -->
-                        <div class="absolute inset-0 bg-gradient-to-tr from-rose-200 to-amber-100 opacity-60"></div>
-                        <svg viewBox="0 0 100 100" class="w-full h-full p-2 relative z-10 drop-shadow-sm">
-                            <rect x="0" y="80" width="100" height="20" fill="#475569" opacity="0.8"/>
-                            <!-- Rajwada Palace Gateway Silhouette -->
-                            <rect x="25" y="30" width="50" height="50" fill="#334155"/>
-                            <rect x="30" y="20" width="40" height="10" fill="#1e293b"/>
-                            <!-- Arches & Windows -->
-                            <path d="M 42 80 L 42 60 Q 50 54 58 60 L 58 80 Z" fill="#fef08a"/>
-                            <rect x="32" y="38" width="6" height="10" fill="#475569" rx="1"/>
-                            <rect x="62" y="38" width="6" height="10" fill="#475569" rx="1"/>
-                            <rect x="46" y="38" width="8" height="10" fill="#475569" rx="1"/>
-                            <!-- Side Turrets -->
-                            <rect x="18" y="45" width="7" height="35" fill="#1e293b"/>
-                            <path d="M 16 45 L 21 38 L 26 45 Z" fill="#94a3b8"/>
-                            <rect x="75" y="45" width="7" height="35" fill="#1e293b"/>
-                            <path d="M 73 45 L 78 38 L 83 45 Z" fill="#94a3b8"/>
-                        </svg>
-                        <div class="absolute -top-1 left-1/3 w-16 h-5 bg-emerald-100/80 border-b border-emerald-200/50 backdrop-blur-sm rotate-2 z-20"></div>
-                    </div>
-                    <div class="space-y-3">
-                        <p class="handwritten text-lg font-bold text-slate-700 text-center">Royal Rajwada 🏰</p>
-                        <div class="bg-emerald-50/50 p-3 rounded-lg border border-emerald-100/60 max-h-48 overflow-y-auto">
-                            <p class="text-xs text-slate-700 leading-relaxed font-semibold">
-                                The home of street food and royal arches! We tasted delicious Poha and Jalebi at Chappan Dukan, then explored the majestic seven-story Rajwada Palace. The stone and wood architecture was completely incredible!
-                            </p>
-                        </div>
-                        <p class="text-[10px] uppercase tracking-widest text-slate-400 font-bold text-center">Indore, Madhya Pradesh</p>
-                    </div>
-                </div>
-
-                <!-- Polaroid 3: Delhi -->
-                <div class="bg-white p-4 pb-8 shadow-lg border border-slate-100 hover:shadow-2xl hover:scale-105 hover:rotate-0 transition-all duration-300 transform polaroid-tilt-left-more bg-gradient-to-b from-white to-rose-50/10 flex flex-col justify-between group">
-                    <div class="relative overflow-hidden aspect-video bg-rose-100 rounded-sm mb-4 border border-slate-200">
-                        <!-- Custom Delhi India Gate Illustration -->
-                        <div class="absolute inset-0 bg-gradient-to-tr from-sky-200 to-indigo-100 opacity-60"></div>
-                        <svg viewBox="0 0 100 100" class="w-full h-full p-2 relative z-10 drop-shadow-sm">
-                            <rect x="0" y="85" width="100" height="15" fill="#475569" opacity="0.8"/>
-                            <!-- India Gate Arch Silhouette -->
-                            <rect x="25" y="35" width="14" height="50" fill="#941c24"/>
-                            <rect x="61" y="35" width="14" height="50" fill="#941c24"/>
-                            <rect x="20" y="22" width="60" height="13" fill="#b91c1c" rx="1"/>
-                            <rect x="28" y="15" width="44" height="7" fill="#7f1d1d" rx="1"/>
-                            <path d="M 39 85 L 39 52 C 39 42, 61 42, 61 52 L 61 85 Z" fill="#cbd5e1" opacity="0.9"/>
-                            <path d="M 39 85 L 39 52 C 39 42, 61 42, 61 52 L 61 85 Z" fill="none" stroke="#7f1d1d" stroke-width="2"/>
-                        </svg>
-                        <div class="absolute -top-1 left-1/3 w-16 h-5 bg-rose-100/80 border-b border-rose-200/50 backdrop-blur-sm -rotate-6 z-20"></div>
-                    </div>
-                    <div class="space-y-3">
-                        <p class="handwritten text-lg font-bold text-slate-700 text-center">Historic India Gate 🇮🇳</p>
-                        <div class="bg-rose-50/50 p-3 rounded-lg border border-rose-100/60 max-h-48 overflow-y-auto">
-                            <p class="text-xs text-slate-700 leading-relaxed font-semibold">
-                                Sighting the tall arches of India Gate in the heart of our capital! Walking along the green lawns, feeling proud as a future defense officer candidate. We also saw the beautiful red walls of the historic Lal Qila!
-                            </p>
-                        </div>
-                        <p class="text-[10px] uppercase tracking-widest text-slate-400 font-bold text-center">New Delhi, Capital</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 4. THE COURT & THE STAGE -->
-        <section id="court-stage" class="scroll-mt-20">
-            <div class="text-center space-y-3 mb-12">
-                <div class="inline-flex items-center gap-1.5 px-3 py-1 bg-marigold-100 rounded-full text-marigold-800 text-xs font-bold">
-                    <i class="fa-solid fa-feather-pointed"></i> MY STORIES
-                </div>
-                <h2 class="font-elegant text-3xl sm:text-4xl font-bold text-slate-800">The Court & The Stage</h2>
-                <p class="text-slate-600 max-w-xl mx-auto text-sm sm:text-base">
-                    A peek into my two absolute favorite worlds. Whether I'm leaping high for a basket or telling stories through classical dance, both prepare me to be brave and focused!
-                </p>
-            </div>
-
-            <!-- Double Column Blog Layout -->
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
-                
-                <!-- Left Side Blog: Basketball -->
-                <div class="bg-white border border-amber-100 rounded-3xl p-6 sm:p-8 shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col justify-between space-y-6 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-amber-50 rounded-full -mr-10 -mt-10 opacity-70 -z-10"></div>
-                    
-                    <div class="space-y-4">
-                        <div class="flex items-center justify-between">
-                            <span class="bg-amber-500 text-white font-bold text-[10px] px-3 py-1 rounded-full uppercase tracking-wider flex items-center gap-1.5 shadow-sm">
-                                <i class="fa-solid fa-basketball animate-bounce"></i> ON THE COURT
-                            </span>
-                            <span class="text-amber-600 text-xs font-bold">JERSEY #11</span>
-                        </div>
-                        
-                        <h3 class="font-elegant text-2xl sm:text-3xl font-extrabold text-slate-800 leading-tight">
-                            Finding My Fire, One Dribble at a Time
-                        </h3>
-                        
-                        <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
-                            For me, basketball is where I practice courage! Being interested in sports builds my physical strength and team spirit, which is super important because my dream is to serve our nation as an army, navy, or airforce officer one day.
-                        </p>
-                        
-                        <blockquote class="border-l-4 border-amber-400 pl-4 py-1 italic text-slate-700 font-elegant text-base">
-                            "Whenever I hold the ball, my mind clears. Every assist teaches me leadership, which will help me serve India in the defense forces!"
-                        </blockquote>
-                        
-                        <p class="text-slate-600 text-sm leading-relaxed">
-                            Dribbling, running past defense, and learning to make quick strategic plays teaches me discipline. The court isn't just a place to play; it is my training ground to become brave, robust, and supportive of my teammates!
-                        </p>
-                    </div>
-
-                    <!-- Visual Accent Line -->
-                    <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400">
-                        <span class="font-bold flex items-center gap-1 text-amber-600">
-                            <i class="fa-solid fa-heart"></i> Future Officer Spirit
-                        </span>
-                        <span>Published by Viva Mansuke</span>
-                    </div>
-                </div>
-
-                <!-- Right Side Blog: Kathak -->
-                <div class="bg-white border border-rose-100 rounded-3xl p-6 sm:p-8 shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col justify-between space-y-6 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-rose-50 rounded-full -mr-10 -mt-10 opacity-70 -z-10"></div>
-
-                    <div class="space-y-4">
-                        <div class="flex items-center justify-between">
-                            <span class="bg-rose-500 text-white font-bold text-[10px] px-3 py-1 rounded-full uppercase tracking-wider flex items-center gap-1.5 shadow-sm">
-                                <i class="fa-solid fa-music"></i> ON THE STAGE
-                            </span>
-                            <span class="text-rose-600 text-xs font-bold">KATHAK STORIES</span>
-                        </div>
-                        
-                        <h3 class="font-elegant text-2xl sm:text-3xl font-extrabold text-slate-800 leading-tight">
-                            The Grace of Ghungroos & Rhythms
-                        </h3>
-                        
-                        <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
-                            If basketball is my fire, Kathak is my grace and concentration. The moment I tie the hundreds of brass bells (*Ghungroos*) around my ankles, I feel completely connected to India's beautiful cultural history.
-                        </p>
-                        
-                        <blockquote class="border-l-4 border-rose-400 pl-4 py-1 italic text-slate-700 font-elegant text-base">
-                            "The fast tatkar footwork keeps me focused, while the rapid spinning chakkars make me feel like I am preparing for flight!"
-                        </blockquote>
-                        
-                        <p class="text-slate-600 text-sm leading-relaxed">
-                            Through hand gestures (*Mudras*) and rhythmic footwork, I get to express complex traditional Indian stories. Just like sketching or military discipline, Kathak requires hundreds of hours of patient practice to make the movements smooth and graceful. It teaches me deep mental strength.
-                        </p>
-                    </div>
-
-                    <!-- Visual Accent Line -->
-                    <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400">
-                        <span class="font-bold flex items-center gap-1 text-rose-600">
-                            <i class="fa-solid fa-certificate"></i> Cultural Legacy
-                        </span>
-                        <span>Published by Viva Mansuke</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 5. CREATIVE FUN ZONE (The Vibe Match Quiz) -->
-        <section id="quiz-zone" class="scroll-mt-20">
-            <div class="bg-gradient-to-r from-peacock-600 via-teal-600 to-indigo-700 rounded-3xl p-6 sm:p-10 text-white shadow-xl relative overflow-hidden">
-                <!-- Glowing decoration drops -->
-                <div class="absolute -top-12 -left-12 w-48 h-48 bg-yellow-400/20 rounded-full blur-3xl pointer-events-none"></div>
-                <div class="absolute -bottom-12 -right-12 w-48 h-48 bg-rose-400/20 rounded-full blur-3xl pointer-events-none"></div>
-
-                <div class="max-w-2xl mx-auto text-center space-y-6">
-                    <div class="inline-flex items-center gap-1.5 px-3 py-1 bg-white/10 border border-white/25 rounded-full text-white text-xs font-bold tracking-wider">
-                        <i class="fa-solid fa-wand-magic-sparkles animate-pulse"></i> CREATIVE FUN ZONE
-                    </div>
-                    <h2 class="font-elegant text-3xl sm:text-4xl font-extrabold">Which Hobby Matches Your Vibe Today?</h2>
-                    <p class="text-teal-100 text-sm sm:text-base">
-                        Take this quick 3-question quiz to discover your ideal creative escape or booster challenge for the day!
-                    </p>
-
-                    <!-- Quiz Content Box with dynamic state -->
-                    <div id="quiz-box" class="bg-white text-slate-800 rounded-2xl p-6 sm:p-8 shadow-2xl space-y-6 text-left relative min-h-[260px] flex flex-col justify-between">
-                        
-                        <!-- Header with Progress indicator -->
-                        <div class="flex items-center justify-between border-b border-slate-100 pb-3">
-                            <span id="quiz-question-title" class="font-bold text-slate-700 text-sm">Question 1 of 3</span>
-                            <div class="flex gap-1" id="quiz-progress-dots">
-                                <span class="w-5 h-2 rounded-full bg-teal-500"></span>
-                                <span class="w-5 h-2 rounded-full bg-slate-200"></span>
-                                <span class="w-5 h-2 rounded-full bg-slate-200"></span>
-                            </div>
-                        </div>
-
-                        <!-- Current Question Content -->
-                        <div id="quiz-step-content" class="space-y-4 py-2">
-                            <!-- Injected dynamically by Javascript -->
-                        </div>
-
-                        <!-- Bottom Navigation Buttons -->
-                        <div class="flex items-center justify-between pt-4 border-t border-slate-100">
-                            <button id="quiz-back-btn" onclick="quizPrevStep()" class="text-slate-400 hover:text-slate-600 font-bold text-xs flex items-center gap-1 disabled:opacity-30 disabled:pointer-events-none" disabled>
-                                <i class="fa-solid fa-arrow-left-long"></i> BACK
-                            </button>
-                            <span class="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Viva's Matchmaker</span>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- Footer with cute credit & links -->
-    <footer class="bg-gradient-to-t from-marigold-50 via-white to-white border-t border-marigold-100 mt-24 py-12">
-        <div class="max-w-6xl mx-auto px-4 text-center space-y-6">
-            <div class="flex items-center justify-center gap-2">
-                <span class="w-8 h-8 rounded-full bg-gradient-to-r from-terracotta-500 to-marigold-500 flex items-center justify-center text-white font-bold text-sm">V</span>
-                <span class="font-elegant font-bold text-lg text-slate-800">Viva Mansuke</span>
-            </div>
-            <p class="text-slate-500 text-xs sm:text-sm max-w-md mx-auto leading-relaxed">
-                Thank you for visiting my little universe of crafts, rhythm, and sports. Keep smiling and creating magic every day! ✨
-            </p>
-            <div class="flex justify-center gap-4 text-slate-400 text-lg">
-                <a href="#hero" class="hover:text-terracotta-500 transition-colors"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#hero" class="hover:text-peacock-500 transition-colors"><i class="fa-brands fa-youtube"></i></a>
-                <a href="#hero" class="hover:text-amber-500 transition-colors"><i class="fa-solid fa-envelope"></i></a>
-            </div>
-            <div class="border-t border-marigold-100/50 pt-6">
-                <p class="text-[11px] text-slate-400 uppercase tracking-widest font-bold">Made with passion in Maharashtra, India 🇮🇳</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Interactive Diary Scrapbook Modal Viewer -->
-    <div id="diaryModal" class="fixed inset-0 bg-slate-900/80 backdrop-blur-sm z- hidden items-center justify-center p-4 transition-opacity duration-300">
-        <div class="bg-white rounded-3xl max-w-lg w-full overflow-hidden shadow-2xl border border-marigold-100 flex flex-col transform scale-95 opacity-0 transition-all duration-300 relative" id="diaryModalContent">
-            
-            <!-- Modal Header -->
-            <div class="p-4 bg-gradient-to-r from-marigold-50 to-amber-50 border-b border-marigold-100 flex items-center justify-between">
-                <h3 class="font-elegant font-bold text-lg text-slate-800" id="diaryModalTitle">Handwritten Scanned Entry</h3>
-                <button onclick="closeDiaryModal()" class="text-slate-400 hover:text-slate-600 p-2 rounded-full hover:bg-slate-100 transition-all">
-                    <i class="fa-solid fa-xmark text-lg"></i>
-                </button>
-            </div>
-            
-            <!-- Modal Image Body -->
-            <div class="p-5 overflow-y-auto max-h-[75vh] flex justify-center bg-slate-50 relative group">
-                <img id="diaryModalImg" src="" alt="Diary Entry" class="max-w-full h-auto rounded-lg shadow-md border border-slate-200">
-            </div>
-            
-            <!-- Modal Footer -->
-            <div class="p-4 border-t border-slate-100 bg-white text-center">
-                <p class="text-xs text-slate-500 font-bold uppercase tracking-wider">Scrapbook Memory from Viva's Private Diary 💫</p>
-            </div>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-neutral-900 leading-tight">
+            Hi, I'm <span class="bg-gradient-to-r from-rose-600 via-orange-500 to-amber-500 bg-clip-text text-transparent">Ananya!</span>
+        </h1>
+        <p class="text-neutral-600 text-base sm:text-lg leading-relaxed">
+            I am an 11-year-old creator, artist, and athlete living in India. 🌟 I love weaving cozy crochet creations, experimenting with vibrant colors on canvas, shooting hoops on the basketball court, and expressing stories through the rhythmic beats of Kathak dance.
+        </p>
+        <div class="flex flex-wrap gap-4 justify-center md:justify-start">
+            <a href="#crafts" class="bg-rose-500 hover:bg-rose-600 text-white font-bold px-7 py-3.5 rounded-full shadow-lg shadow-rose-500/20 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 flex items-center gap-2">
+                <i class="fa-solid fa-palette"></i> Explore My Creations
+            </a>
+            <a href="#vibe-quiz" class="bg-amber-100 hover:bg-amber-200 text-amber-950 font-bold px-7 py-3.5 rounded-full transition-all duration-300 flex items-center gap-2">
+                <i class="fa-solid fa-compass"></i> Daily Spark Quiz
+            </a>
         </div>
     </div>
 
-    <!-- Canvas celebration overlay effect -->
-    <canvas id="confettiCanvas" class="fixed inset-0 pointer-events-none z-50 w-full h-full"></canvas>
+    <!-- Hero Art / Frame (Combining custom travel photo) -->
+    <div class="w-full md:w-1/2 flex justify-center relative">
+        <div class="relative art-float w-72 h-72 sm:w-96 sm:h-96">
+            <div class="absolute inset-0 bg-gradient-to-tr from-rose-300 to-amber-300 rounded-3xl transform rotate-6 scale-95 opacity-50 shadow-lg"></div>
+            <div class="absolute inset-0 bg-gradient-to-bl from-teal-300 to-emerald-300 rounded-3xl transform -rotate-3 scale-95 opacity-50 shadow-lg"></div>
+            <!-- Verbatim Image Reference for Hero profile placeholder -->
+            <img src="WhatsApp Image 2026-06-22 at 9.54.36 AM.jpeg" 
+                 alt="Ananya's Travel Memory" 
+                 class="w-full h-full object-cover rounded-3xl border-4 border-white shadow-2xl relative z-10"
+                 onerror="this.onerror=null; this.src='https://placehold.co/600x600/ffe4e6/9f1239?text=Ananya+Creative+Explorer';">
+            <div class="absolute -bottom-4 -right-4 bg-white/90 backdrop-blur-sm px-4 py-3 rounded-2xl shadow-xl z-20 border border-neutral-100">
+                <span class="text-xs sm:text-sm font-bold text-neutral-800 flex items-center gap-1.5">
+                    <span class="inline-block w-2.5 h-2.5 bg-emerald-500 rounded-full animate-ping"></span>
+                    🎨 Exploring India & Beyond!
+                </span>
+            </div>
+        </div>
+    </div>
+</header>
 
-    <!-- Core Interactive Logic Script -->
-    <script>
-        /* -------------------------------------------
-           DIARY MODAL SCRAPBOOK VIEWER LOGIC
-        ------------------------------------------- */
-        const diaryModal = document.getElementById('diaryModal');
-        const diaryModalContent = document.getElementById('diaryModalContent');
-        const diaryModalImg = document.getElementById('diaryModalImg');
-        const diaryModalTitle = document.getElementById('diaryModalTitle');
+<!-- Crafts & Painting Section -->
+<section id="crafts" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="text-center max-w-2xl mx-auto mb-12 space-y-3">
+        <div class="inline-flex items-center gap-2 px-3 py-1 bg-amber-100 border border-amber-200 text-amber-800 text-xs font-bold tracking-wider uppercase rounded-full">
+            ✨ Stitch by Stitch & Stroke by Stroke
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-bold text-neutral-900 flex items-center justify-center gap-2">
+            🎨 The Cozy Craft & Painting Studio
+        </h2>
+        <p class="text-neutral-500 text-sm sm:text-base">
+            Handcrafted woolens and vibrant canvases created straight from my heart. Give a heart to your favorite creations!
+        </p>
+    </div>
 
-        function openDiaryModal(imgSrc, title) {
-            diaryModalImg.src = imgSrc;
-            diaryModalTitle.innerText = title;
-            
-            // Display modal
-            diaryModal.classList.remove('hidden');
-            diaryModal.classList.add('flex');
-            
-            // Trigger animation
-            setTimeout(() => {
-                diaryModal.classList.remove('bg-slate-900/0');
-                diaryModalContent.classList.remove('scale-95', 'opacity-0');
-                diaryModalContent.classList.add('scale-100', 'opacity-100');
-            }, 10);
-            
-            // Pop sound
-            playSynthSound('like');
-        }
-
-        function closeDiaryModal() {
-            diaryModalContent.classList.remove('scale-100', 'opacity-100');
-            diaryModalContent.classList.add('scale-95', 'opacity-0');
-            
-            setTimeout(() => {
-                diaryModal.classList.remove('flex');
-                diaryModal.classList.add('hidden');
-            }, 300);
-        }
-
-        // Close on escape or outside click
-        window.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') closeDiaryModal();
-        });
-        diaryModal.addEventListener('click', (e) => {
-            if (e.target === diaryModal) closeDiaryModal();
-        });
-
-
-        /* -------------------------------------------
-           MOBILE NAVIGATION MENU TOGGLE
-        ------------------------------------------- */
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Close mobile menu on clicking any link
-        mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
-        });
-
-
-        /* -------------------------------------------
-           LIKE BUTTON INTERACTIVE SYSTEM (CRAFT STUDIO)
-        ------------------------------------------- */
-        function likeItem(itemId, btn) {
-            const countEl = document.getElementById(`like-count-${itemId}`);
-            let currentVal = parseInt(countEl.innerText);
-            
-            // Increment the value
-            currentVal++;
-            countEl.innerText = currentVal;
-
-            // Simple visual response pop
-            btn.classList.remove('text-slate-400', 'bg-slate-50');
-            btn.classList.add('text-rose-600', 'bg-rose-50', 'scale-110');
-            
-            // Dynamic bubbling floating heart effect
-            createFloatingHeart(btn);
-
-            // Pop sound (Synthesized)
-            playSynthSound('like');
-
-            // Periodic big celebration confetti
-            if (currentVal % 10 === 0) {
-                triggerConfetti();
-            }
-
-            // Quick timeout to settle visual state back
-            setTimeout(() => {
-                btn.classList.remove('scale-110');
-            }, 200);
-        }
-
-        // Generates small floating heart particles rising up from clicked elements
-        function createFloatingHeart(targetElement) {
-            const rect = targetElement.getBoundingClientRect();
-            const bubble = document.createElement('div');
-            bubble.innerHTML = '<i class="fa-solid fa-heart text-rose-500 text-lg"></i>';
-            bubble.classList.add('fixed', 'heart-bubble', 'z-50', 'pointer-events-none');
-            
-            // Positioning near the clicked location
-            bubble.style.left = `${rect.left + rect.width/2 - 10}px`;
-            bubble.style.top = `${rect.top - 10}px`;
-            
-            document.body.appendChild(bubble);
-            
-            // Auto remove after animation completes
-            setTimeout(() => {
-                bubble.remove();
-            }, 1000);
-        }
-
-
-        /* -------------------------------------------
-           AUDIO SYNTHESIZER SOUND FEEDBACK
-        ------------------------------------------- */
-        let audioCtx = null;
-
-        function initAudio() {
-            if (!audioCtx) {
-                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-            }
-        }
-
-        function playSynthSound(type) {
-            initAudio();
-            if (!audioCtx) return;
-
-            const osc = audioCtx.createOscillator();
-            const gain = audioCtx.createGain();
-            osc.connect(gain);
-            gain.connect(audioCtx.destination);
-
-            if (type === 'like') {
-                osc.type = 'triangle';
-                osc.frequency.setValueAtTime(1400, audioCtx.currentTime);
-                osc.frequency.exponentialRampToValueAtTime(800, audioCtx.currentTime + 0.15);
-                
-                gain.gain.setValueAtTime(0.3, audioCtx.currentTime);
-                gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.18);
-                
-                osc.start();
-                osc.stop(audioCtx.currentTime + 0.2);
-            }
-        }
-
-
-        /* -------------------------------------------
-           CREATIVE FUN ZONE PORTFOLIO QUIZ LOGIC
-        ------------------------------------------- */
-        const quizData = [
-            {
-                question: "Choose a magical morning color to start your ideal day:",
-                options: [
-                    { text: "Sunny Marigold Yellow ☀️", points: "basketball" },
-                    { text: "Elegant Terracotta Rose 🌸", points: "kathak" },
-                    { text: "Doodle Sky Blue ✏️", points: "painting" },
-                    { text: "Warm Cozy Crimson 🧶", points: "crochet" }
-                ]
-            },
-            {
-                question: "Pick an awesome sound that gets your brain sparks flying:",
-                options: [
-                    { text: "The clean squeak of sneakers on a court!", points: "basketball" },
-                    { text: "The musical jingling chime of footbells!", points: "kathak" },
-                    { text: "The satisfying scrape of a sketching pencil!", points: "painting" },
-                    { text: "The cozy sound of sliding a crochet needle!", points: "crochet" }
-                ]
-            },
-            {
-                question: "How are you feeling like spending your energy today?",
-                options: [
-                    { text: "Supercharged! Let's leap, jump, and run!", points: "basketball" },
-                    { text: "Graceful & focused. Let's express feelings!", points: "kathak" },
-                    { text: "Calm & Creative. Let's sketch and doodle!", points: "painting" },
-                    { text: "Chill, comfy and creative with a warm cup of cocoa!", points: "crochet" }
-                ]
-            }
-        ];
-
-        let quizCurrentStep = 0;
-        let quizAnswers = [];
-
-        function renderQuizStep() {
-            const stepTitle = document.getElementById('quiz-question-title');
-            const stepContent = document.getElementById('quiz-step-content');
-            const backBtn = document.getElementById('quiz-back-btn');
-            const progressDots = document.getElementById('quiz-progress-dots');
-
-            // Set progress indicators
-            stepTitle.innerText = `Question ${quizCurrentStep + 1} of 3`;
-            backBtn.disabled = quizCurrentStep === 0;
-
-            // Update color dots
-            progressDots.innerHTML = quizData.map((_, idx) => {
-                const activeColor = idx <= quizCurrentStep ? 'bg-teal-500' : 'bg-slate-200';
-                return `<span class="w-5 h-2 rounded-full ${activeColor} transition-colors"></span>`;
-            }).join('');
-
-            // Render current Question & choices safely
-            const currentQ = quizData[quizCurrentStep];
-            let html = `<p class="font-bold text-slate-800 text-lg md:text-xl mb-4 leading-snug">${currentQ.question}</p>`;
-            html += `<div class="grid grid-cols-1 gap-3">`;
-
-            currentQ.options.forEach((opt, oIdx) => {
-                html += `
-                    <button onclick="handleQuizAnswer('${opt.points}')" 
-                        class="w-full text-left p-4 rounded-xl border border-slate-200 hover:border-teal-400 hover:bg-teal-50/50 active:scale-98 transition-all duration-200 text-slate-700 font-bold flex items-center justify-between group shadow-sm">
-                        <span>${opt.text}</span>
-                        <i class="fa-solid fa-chevron-right text-xs text-slate-300 group-hover:text-teal-500 transition-colors"></i>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+        <!-- Card 1: Crochet creations -->
+        <div class="bg-white rounded-3xl overflow-hidden shadow-md hover-card border border-rose-500/10 group">
+            <div class="h-64 sm:h-80 overflow-hidden relative">
+                <!-- Verbatim Image Reference for Crochet -->
+                <img src="WhatsApp Image 2026-06-22 at 9.52.00 AM.jpeg" 
+                     alt="Crochet Creations" 
+                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                     onerror="this.onerror=null; this.src='https://placehold.co/600x400/fffbeb/b45309?text=Cozy+Crochet+Studio';">
+                <span class="absolute top-4 left-4 bg-rose-500/90 backdrop-blur-sm text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider shadow-md">
+                    🧶 Hand-Knit Woolens
+                </span>
+            </div>
+            <div class="p-6 sm:p-8 space-y-4">
+                <h3 class="text-2xl font-bold text-neutral-900">Cozy Woolen Crochet Collections</h3>
+                <p class="text-neutral-600 text-sm sm:text-base leading-relaxed">
+                    Miniature plushies, adorable colorful turtles, bookmarks, and vibrant toys. I find so much joy and patience in choosing the softest yarn and counting each row hook-by-hook.
+                </p>
+                <div class="flex items-center justify-between pt-4 border-t border-rose-50/50">
+                    <span class="text-xs font-semibold text-neutral-400">Published: June 2026</span>
+                    <button onclick="addLike('crochetLikes')" class="bg-rose-50 hover:bg-rose-100 text-rose-600 font-bold px-4 py-2.5 rounded-full flex items-center gap-2 transition-all duration-300 active:scale-95 shadow-sm">
+                        <i class="fa-solid fa-heart text-rose-500 animate-pulse"></i> Love this! <span id="crochetLikes" class="bg-white px-2 py-0.5 rounded-full text-xs shadow-inner">128</span>
                     </button>
-                `;
-            });
-            html += `</div>`;
-
-            stepContent.innerHTML = html;
-        }
-
-        function handleQuizAnswer(pointCategory) {
-            quizAnswers[quizCurrentStep] = pointCategory;
-            playSynthSound('like');
-
-            if (quizCurrentStep < 2) {
-                quizCurrentStep++;
-                renderQuizStep();
-            } else {
-                showQuizResult();
-            }
-        }
-
-        function quizPrevStep() {
-            if (quizCurrentStep > 0) {
-                quizCurrentStep--;
-                renderQuizStep();
-            }
-        }
-
-        function showQuizResult() {
-            const stepTitle = document.getElementById('quiz-question-title');
-            const stepContent = document.getElementById('quiz-step-content');
-            const progressDots = document.getElementById('quiz-progress-dots');
-
-            stepTitle.innerText = "MATCH COMPLETED!";
-            progressDots.innerHTML = `<span class="w-16 h-2 rounded-full bg-emerald-500"></span>`;
-
-            // Tallies votes to choose final category
-            const countMap = {};
-            quizAnswers.forEach(cat => {
-                countMap[cat] = (countMap[cat] || 0) + 1;
-            });
-
-            // Find key with maximum value
-            let winner = 'painting';
-            let maxCount = 0;
-            for (const key in countMap) {
-                if (countMap[key] > maxCount) {
-                    maxCount = countMap[key];
-                    winner = key;
-                }
-            }
-
-            // Results details templates
-            const resultsTemplates = {
-                basketball: {
-                    title: "Active Point Guard Energizer! 🏀",
-                    desc: "Your energy levels are off the chart today! You are ready to train hard, charge down the court, and practice leadership to become a future defense officer!",
-                    btnText: "Read My Basketball Journey",
-                    link: "#court-stage"
-                },
-                kathak: {
-                    title: "Graceful Classical Storyteller! 💃",
-                    desc: "You have a beautiful focus today. You feel connected to traditional classical rhythms, jingling ghungroos, and expressive storytelling.",
-                    btnText: "Explore My Kathak Story",
-                    link: "#court-stage"
-                },
-                painting: {
-                    title: "Artistic Doodle Explorer! ✏️",
-                    desc: "Your imagination is running wild with cool shapes. It's a wonderful day to grab a sketchbook and doodle, try a sketch, or draw landscapes!",
-                    btnText: "See My Creative Space Photo",
-                    link: "#craft-studio"
-                },
-                crochet: {
-                    title: "Cozy Crochet Crafter! 🧶",
-                    desc: "You feel calm, comfy and patient today! It's a marvelous day to grab some yarn, count those loops, and knit a gorgeous flower coaster or granny's square!",
-                    btnText: "Browse My Crochet Projects",
-                    link: "#craft-studio"
-                }
-            };
-
-            const finalRes = resultsTemplates[winner];
-
-            stepContent.innerHTML = `
-                <div class="text-center space-y-4 py-4 animate-fade-in">
-                    <div class="inline-flex w-16 h-16 rounded-full bg-teal-100 text-teal-600 items-center justify-center text-3xl shadow-sm mb-2 animate-bounce">
-                        🎉
-                    </div>
-                    <h3 class="font-elegant text-slate-800 leading-tight text-xl sm:text-2xl font-bold">${finalRes.title}</h3>
-                    <p class="text-slate-600 text-sm max-w-md mx-auto leading-relaxed">${finalRes.desc}</p>
-                    
-                    <div class="pt-4 flex flex-col sm:flex-row gap-3 justify-center">
-                        <a href="${finalRes.link}" onclick="resetQuiz()" class="bg-gradient-to-r from-peacock-500 to-indigo-600 hover:from-peacock-600 hover:to-indigo-700 text-white font-bold px-6 py-3 rounded-full shadow-lg transition-all text-xs sm:text-sm text-center">
-                            ${finalRes.btnText}
-                        </a>
-                        <button onclick="resetQuiz()" class="border border-slate-200 text-slate-500 hover:bg-slate-50 font-bold px-6 py-3 rounded-full text-xs sm:text-sm transition-all">
-                            Retake Quiz
-                        </button>
-                    </div>
                 </div>
-            `;
+            </div>
+        </div>
 
-            triggerConfetti();
-        }
-
-        function resetQuiz() {
-            quizCurrentStep = 0;
-            quizAnswers = [];
-            renderQuizStep();
-        }
-
-        // Initialize Quiz
-        renderQuizStep();
-
-
-        /* -------------------------------------------
-           CANVAS CELEBRATION CONFETTI ENGINE
-        ------------------------------------------- */
-        const confettiCanvas = document.getElementById('confettiCanvas');
-        const cCtx = confettiCanvas.getContext('2d');
-        let confettiArray = [];
-        let isConfettiActive = false;
-
-        function resizeConfettiCanvas() {
-            confettiCanvas.width = window.innerWidth;
-            confettiCanvas.height = window.innerHeight;
-        }
-        window.addEventListener('resize', resizeConfettiCanvas);
-        resizeConfettiCanvas();
-
-        class ConfettiParticle {
-            constructor() {
-                this.x = Math.random() * confettiCanvas.width;
-                this.y = Math.random() * -confettiCanvas.height - 20;
-                this.r = Math.random() * 6 + 4;
-                this.color = `hsl(${Math.random() * 360}, 85%, 65%)`;
-                this.vx = Math.random() * 4 - 2;
-                this.vy = Math.random() * 5 + 4;
-                this.rotation = Math.random() * 360;
-                this.rotationSpeed = Math.random() * 4 - 2;
-            }
-
-            update() {
-                this.x += this.vx;
-                this.y += this.vy;
-                this.rotation += this.rotationSpeed;
-            }
-
-            draw() {
-                cCtx.save();
-                cCtx.translate(this.x, this.y);
-                cCtx.rotate(this.rotation * Math.PI / 180);
-                cCtx.fillStyle = this.color;
-                cCtx.fillRect(-this.r, -this.r, this.r * 2, this.r * 1.5);
-                cCtx.restore();
-            }
-        }
-
-        function triggerConfetti() {
-            // Add a burst of confetti particles
-            for (let i = 0; i < 70; i++) {
-                confettiArray.push(new ConfettiParticle());
-            }
-            if (!isConfettiActive) {
-                isConfettiActive = true;
-                animateConfetti();
-            }
-        }
-
-        function animateConfetti() {
-            cCtx.clearRect(0, 0, confettiCanvas.width, confettiCanvas.height);
-            
-            confettiArray.forEach((part, index) => {
-                part.update();
-                part.draw();
-
-                // Remove fell particles
-                if (part.y > confettiCanvas.height) {
-                    confettiArray.splice(index, 1);
-                }
-            });
-
-            if (confettiArray.length > 0) {
-                requestAnimationFrame(animateConfetti);
-            } else {
-                isConfettiActive = false;
-            }
-        }
-    </script>
-</body>
-</html>
+        <!-- Card 2: Painting creations -->
+        <div class="bg-white rounded-3xl overflow-hidden shadow-md hover-card border border-rose-500/10 group">
+            <div class="h-64 sm:h-80 overflow-hidden relative">
+                <!-- Verbatim Image Reference for Watercolor Canvas Painting -->
+                <img src="WhatsApp Image
