@@ -3,185 +3,1049 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ananya's Creative Corner - Personal Portfolio</title>
-    <!-- Load Tailwind CSS -->
+    <title>Viva's Creative Universe - Portfolio & Dream Board</title>
+    
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts for premium Indian/Modern typography mix -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- FontAwesome for icons -->
+    
+    <!-- Premium Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background: linear-gradient(135deg, #fdf6f6 0%, #fffbf2 50%, #f4fbf7 100%);
+            background: linear-gradient(135deg, #fdf8f5 0%, #f7fbfd 50%, #fafdf6 100%);
         }
-        h1, h2, h3, h4, .serif-font {
+        h1, h2, h3, .serif-font {
             font-family: 'Playfair Display', serif;
+        }
+        .military-font {
+            font-family: 'Space Grotesk', sans-serif;
         }
         .custom-scrollbar::-webkit-scrollbar {
             width: 8px;
+            height: 8px;
         }
         .custom-scrollbar::-webkit-scrollbar-track {
-            background: #fff5f5;
+            background: #fdf8f5;
         }
         .custom-scrollbar::-webkit-scrollbar-thumb {
-            background: #fecdd3;
+            background: #fed7aa;
             border-radius: 9999px;
         }
-        /* Creative floating animations */
-        @keyframes float {
+        
+        /* Floating animations */
+        @keyframes gentle-float {
             0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-12px) rotate(1.5deg); }
+            50% { transform: translateY(-8px) rotate(0.5deg); }
         }
-        .art-float {
-            animation: float 6s ease-in-out infinite;
+        .float-card {
+            animation: gentle-float 6s ease-in-out infinite;
         }
-        @keyframes spin-slow {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        .spin-slow {
-            animation: spin-slow 15s linear infinite;
-        }
-        /* Smooth scale transitions */
-        .hover-card {
+        
+        /* Interactive Card Scale */
+        .premium-card {
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        .hover-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px -15px rgba(225, 29, 72, 0.12);
+        .premium-card:hover {
+            transform: translateY(-6px) scale(1.01);
+            box-shadow: 0 25px 50px -12px rgba(251, 146, 60, 0.15);
+        }
+
+        /* Radar scan effect for military section */
+        @keyframes radar-pulse {
+            0% { transform: scale(0.2); opacity: 0.8; }
+            100% { transform: scale(2.2); opacity: 0; }
+        }
+        .radar-wave {
+            animation: radar-pulse 3s infinite linear;
         }
     </style>
 </head>
-<body class="custom-scrollbar overflow-x-hidden text-neutral-800 antialiased selection:bg-rose-100 selection:text-rose-900">
+<body class="custom-scrollbar overflow-x-hidden text-neutral-800 antialiased selection:bg-orange-100 selection:text-orange-900">
 
-<!-- Navigation bar with smooth rose gold details -->
-<nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-rose-100 shadow-sm transition-all duration-300">
+<nav class="sticky top-0 z-50 bg-white/70 backdrop-blur-md border-b border-orange-100/50 shadow-sm transition-all duration-300">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-16">
-            <div class="flex items-center gap-2.5">
-                <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-rose-500 to-amber-500 flex items-center justify-center text-white shadow-md shadow-rose-500/20">
-                    <i class="fa-solid fa-wand-magic-sparkles text-sm animate-pulse"></i>
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-orange-500 via-amber-500 to-indigo-600 flex items-center justify-center text-white shadow-md shadow-orange-500/10">
+                    <i class="fa-solid fa-feather-pointed text-sm"></i>
                 </div>
-                <span class="serif-font font-bold text-xl sm:text-2xl tracking-wide bg-gradient-to-r from-rose-600 via-amber-600 to-emerald-600 bg-clip-text text-transparent">Ananya's Corner</span>
+                <span class="serif-font font-black text-xl tracking-wide bg-gradient-to-r from-orange-600 via-amber-600 to-indigo-600 bg-clip-text text-transparent">Viva's Universe</span>
             </div>
-            <!-- Desktop Nav Links -->
-            <div class="hidden md:flex items-center gap-7 text-sm font-semibold text-neutral-600">
-                <a href="#about" class="hover:text-rose-600 transition-colors flex items-center gap-1.5"><i class="fa-solid fa-address-card text-rose-400"></i> About</a>
-                <a href="#crafts" class="hover:text-amber-600 transition-colors flex items-center gap-1.5"><i class="fa-solid fa-palette text-amber-400"></i> Crafts & Art</a>
-                <a href="#sports" class="hover:text-orange-600 transition-colors flex items-center gap-1.5"><i class="fa-solid fa-basketball text-orange-400"></i> Basketball</a>
-                <a href="#dance" class="hover:text-rose-600 transition-colors flex items-center gap-1.5"><i class="fa-solid fa-shoe-prints text-rose-400"></i> Kathak</a>
-                <a href="#travel" class="hover:text-emerald-600 transition-colors flex items-center gap-1.5"><i class="fa-solid fa-compass text-emerald-400"></i> Travel Journal</a>
-                <a href="#vibe-quiz" class="bg-rose-500 text-white px-5 py-2.5 rounded-full hover:bg-rose-600 transition-all shadow-md hover:shadow-lg hover:shadow-rose-500/20 flex items-center gap-1.5"><i class="fa-solid fa-lightbulb"></i> Daily Vibe</a>
+            
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex items-center gap-6 text-sm font-bold text-neutral-600">
+                <a href="#about" class="hover:text-orange-600 transition-colors flex items-center gap-1.5"><i class="fa-solid fa-child-reaching text-orange-400"></i> About Me</a>
+                <a href="#dreams" class="hover:text-indigo-600 transition-colors flex items-center gap-1.5"><i class="fa-solid fa-user-shield text-indigo-400"></i> My Aspirations</a>
+                <a href="#crafts" class="hover:text-amber-600 transition-colors flex items-center gap-1.5"><i class="fa-solid fa-scissors text-amber-400"></i> Crochet & Art</a>
+                <a href="#travel" class="hover:text-teal-600 transition-colors flex items-center gap-1.5"><i class="fa-solid fa-map-location-dot text-teal-400"></i> Travel Diaries</a>
+                <a href="#fun-zone" class="bg-gradient-to-r from-orange-500 to-amber-500 text-white px-5 py-2.5 rounded-full hover:shadow-lg transition-all flex items-center gap-1.5"><i class="fa-solid fa-circle-play"></i> Play Room</a>
             </div>
-            <!-- Mobile Menu Toggle -->
-            <button onclick="toggleMobileMenu()" class="md:hidden text-neutral-600 hover:text-rose-600 focus:outline-none p-2 rounded-lg hover:bg-neutral-50 transition-colors">
-                <i id="menuIcon" class="fa-solid fa-bars text-xl"></i>
+            
+            <!-- Mobile Menu button -->
+            <button onclick="toggleMobileNav()" class="md:hidden text-neutral-600 hover:text-orange-600 focus:outline-none p-2 rounded-lg hover:bg-neutral-100 transition-colors">
+                <i id="menuNavIcon" class="fa-solid fa-bars text-xl"></i>
             </button>
         </div>
     </div>
+    
     <!-- Mobile dropdown menu -->
-    <div id="mobileMenu" class="hidden md:hidden bg-white/95 border-b border-rose-500/10 px-4 py-4 space-y-3 transition-all duration-300">
-        <a href="#about" onclick="toggleMobileMenu()" class="block text-neutral-600 hover:text-rose-600 font-semibold py-2 px-3 rounded-lg hover:bg-rose-50/50"><i class="fa-solid fa-address-card mr-2.5 text-rose-500"></i>About</a>
-        <a href="#crafts" onclick="toggleMobileMenu()" class="block text-neutral-600 hover:text-amber-600 font-semibold py-2 px-3 rounded-lg hover:bg-amber-50/50"><i class="fa-solid fa-palette mr-2.5 text-amber-500"></i>Crafts & Art</a>
-        <a href="#sports" onclick="toggleMobileMenu()" class="block text-neutral-600 hover:text-orange-600 font-semibold py-2 px-3 rounded-lg hover:bg-orange-50/50"><i class="fa-solid fa-basketball mr-2.5 text-orange-500"></i>Basketball</a>
-        <a href="#dance" onclick="toggleMobileMenu()" class="block text-neutral-600 hover:text-rose-600 font-semibold py-2 px-3 rounded-lg hover:bg-rose-50/50"><i class="fa-solid fa-shoe-prints mr-2.5 text-rose-550"></i>Kathak</a>
-        <a href="#travel" onclick="toggleMobileMenu()" class="block text-neutral-600 hover:text-emerald-600 font-semibold py-2 px-3 rounded-lg hover:bg-emerald-50/50"><i class="fa-solid fa-compass mr-2.5 text-emerald-500"></i>Travel Journal</a>
-        <a href="#vibe-quiz" onclick="toggleMobileMenu()" class="block text-rose-600 font-bold py-2 px-3 rounded-lg bg-rose-50"><i class="fa-solid fa-lightbulb mr-2.5 text-rose-500"></i>Daily Vibe Quiz</a>
+    <div id="mobileNavMenu" class="hidden md:hidden bg-white/95 border-b border-orange-100 px-4 py-4 space-y-3">
+        <a href="#about" onclick="toggleMobileNav()" class="block text-neutral-600 hover:text-orange-600 font-bold py-2 px-3 rounded-lg hover:bg-orange-50/50"><i class="fa-solid fa-child-reaching mr-2.5 text-orange-500"></i>About Me</a>
+        <a href="#dreams" onclick="toggleMobileNav()" class="block text-neutral-600 hover:text-indigo-600 font-bold py-2 px-3 rounded-lg hover:bg-indigo-50/50"><i class="fa-solid fa-user-shield mr-2.5 text-indigo-500"></i>My Aspirations</a>
+        <a href="#crafts" onclick="toggleMobileNav()" class="block text-neutral-600 hover:text-amber-600 font-bold py-2 px-3 rounded-lg hover:bg-amber-50/50"><i class="fa-solid fa-scissors mr-2.5 text-amber-500"></i>Crochet & Art</a>
+        <a href="#travel" onclick="toggleMobileNav()" class="block text-neutral-600 hover:text-teal-600 font-bold py-2 px-3 rounded-lg hover:bg-teal-50/50"><i class="fa-solid fa-map-location-dot mr-2.5 text-teal-500"></i>Travel Diaries</a>
+        <a href="#fun-zone" onclick="toggleMobileNav()" class="block text-orange-600 font-bold py-2 px-3 rounded-lg bg-orange-50"><i class="fa-solid fa-circle-play mr-2.5 text-orange-500"></i>Play Room</a>
     </div>
 </nav>
 
-<!-- Hero / About Me Header -->
-<header id="about" class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-24 flex flex-col md:flex-row items-center gap-12">
-    <!-- Background sparkles and shapes -->
-    <div class="absolute top-10 left-10 w-24 h-24 bg-rose-200/30 rounded-full blur-2xl -z-10"></div>
-    <div class="absolute bottom-12 right-10 w-36 h-36 bg-amber-200/30 rounded-full blur-3xl -z-10 bg-gradient-to-tr from-amber-200 to-rose-100"></div>
+<header id="about" class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20 flex flex-col md:flex-row items-center gap-12">
+    <!-- Decorative Ambient Blobs -->
+    <div class="absolute top-10 left-10 w-28 h-28 bg-orange-200/40 rounded-full blur-3xl -z-10"></div>
+    <div class="absolute bottom-10 right-10 w-44 h-44 bg-indigo-200/30 rounded-full blur-3xl -z-10"></div>
 
-    <!-- Hero Content -->
-    <div class="w-full md:w-1/2 space-y-6 text-center md:text-left">
-        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-rose-100/70 border border-rose-200 text-rose-700 text-xs sm:text-sm font-bold tracking-wider uppercase shadow-sm">
-            <span>✨ Namaste! Welcome to My Creative Corner</span>
-        </div>
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-neutral-900 leading-tight">
-            Hi, I'm <span class="bg-gradient-to-r from-rose-600 via-orange-500 to-amber-500 bg-clip-text text-transparent">Ananya!</span>
-        </h1>
-        <p class="text-neutral-600 text-base sm:text-lg leading-relaxed">
-            I am an 11-year-old creator, artist, and athlete living in India. 🌟 I love weaving cozy crochet creations, experimenting with vibrant colors on canvas, shooting hoops on the basketball court, and expressing stories through the rhythmic beats of Kathak dance.
-        </p>
-        <div class="flex flex-wrap gap-4 justify-center md:justify-start">
-            <a href="#crafts" class="bg-rose-500 hover:bg-rose-600 text-white font-bold px-7 py-3.5 rounded-full shadow-lg shadow-rose-500/20 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 flex items-center gap-2">
-                <i class="fa-solid fa-palette"></i> Explore My Creations
-            </a>
-            <a href="#vibe-quiz" class="bg-amber-100 hover:bg-amber-200 text-amber-950 font-bold px-7 py-3.5 rounded-full transition-all duration-300 flex items-center gap-2">
-                <i class="fa-solid fa-compass"></i> Daily Spark Quiz
-            </a>
+    <!-- Hero Profile Image Frame -->
+    <div class="w-full md:w-5/12 flex justify-center relative">
+        <div class="relative float-card w-72 h-96 sm:w-80 sm:h-[420px]">
+            <div class="absolute inset-0 bg-gradient-to-tr from-amber-200 to-orange-300 rounded-3xl transform rotate-3 scale-95 opacity-50 shadow-md"></div>
+            <div class="absolute inset-0 bg-gradient-to-bl from-teal-200 to-indigo-300 rounded-3xl transform -rotate-3 scale-95 opacity-50 shadow-md"></div>
+            
+            <!-- VERBATIM: WhatsApp Image 2026-06-21 at 2.39.31 PM.jpeg -->
+            <img src="WhatsApp Image 2026-06-21 at 2.39.31 PM.jpeg" 
+                 alt="Viva at her desk" 
+                 class="w-full h-full object-cover rounded-3xl border-4 border-white shadow-2xl relative z-10"
+                 onerror="this.onerror=null; this.src='https://placehold.co/600x800/fdf8f5/e07a5f?text=Namaste+from+Viva!';">
+                 
+            <div class="absolute -bottom-4 -left-4 bg-white/95 backdrop-blur-sm px-4 py-3 rounded-2xl shadow-xl z-20 border border-neutral-100 flex items-center gap-2">
+                <span class="inline-block w-3 h-3 bg-emerald-500 rounded-full animate-pulse"></span>
+                <span class="text-xs font-bold text-neutral-800">11-Year-Old Creator 🌟</span>
+            </div>
         </div>
     </div>
 
-    <!-- Hero Art / Frame (Combining custom travel photo) -->
-    <div class="w-full md:w-1/2 flex justify-center relative">
-        <div class="relative art-float w-72 h-72 sm:w-96 sm:h-96">
-            <div class="absolute inset-0 bg-gradient-to-tr from-rose-300 to-amber-300 rounded-3xl transform rotate-6 scale-95 opacity-50 shadow-lg"></div>
-            <div class="absolute inset-0 bg-gradient-to-bl from-teal-300 to-emerald-300 rounded-3xl transform -rotate-3 scale-95 opacity-50 shadow-lg"></div>
-            <!-- Verbatim Image Reference for Hero profile placeholder -->
-            <img src="WhatsApp Image 2026-06-22 at 9.54.36 AM.jpeg" 
-                 alt="Ananya's Travel Memory" 
-                 class="w-full h-full object-cover rounded-3xl border-4 border-white shadow-2xl relative z-10"
-                 onerror="this.onerror=null; this.src='https://placehold.co/600x600/ffe4e6/9f1239?text=Ananya+Creative+Explorer';">
-            <div class="absolute -bottom-4 -right-4 bg-white/90 backdrop-blur-sm px-4 py-3 rounded-2xl shadow-xl z-20 border border-neutral-100">
-                <span class="text-xs sm:text-sm font-bold text-neutral-800 flex items-center gap-1.5">
-                    <span class="inline-block w-2.5 h-2.5 bg-emerald-500 rounded-full animate-ping"></span>
-                    🎨 Exploring India & Beyond!
-                </span>
+    <!-- Hero Intro Text -->
+    <div class="w-full md:w-7/12 space-y-6 text-center md:text-left">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange-100/80 border border-orange-200 text-orange-800 text-xs font-extrabold tracking-wider uppercase shadow-sm">
+            <span>✨ Welcome to my digital journal</span>
+        </div>
+        
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-neutral-900 leading-tight">
+            Hi, I'm <span class="bg-gradient-to-r from-orange-600 via-amber-500 to-indigo-600 bg-clip-text text-transparent">Viva!</span>
+        </h1>
+        
+        <p class="text-neutral-600 text-base sm:text-lg leading-relaxed">
+            I am an 11-year-old creator, future military aspirant, and craft enthusiast! Whether I am weaving intricate pastel patterns with my crochet hooks, painting vibrant canvases, scoring points on the basketball court, or tuning my ghungroos for classical Kathak rhythms—I find inspiration in every journey I take.
+        </p>
+
+        <!-- Quick highlights -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">
+            <div class="p-3 bg-white border border-orange-50 rounded-xl text-center shadow-sm">
+                <span class="text-xl">🧶</span>
+                <p class="text-xs font-bold mt-1 text-neutral-700">Crochet Crafter</p>
             </div>
+            <div class="p-3 bg-white border border-orange-50 rounded-xl text-center shadow-sm">
+                <span class="text-xl">🏀</span>
+                <p class="text-xs font-bold mt-1 text-neutral-700">Court Point Guard</p>
+            </div>
+            <div class="p-3 bg-white border border-orange-50 rounded-xl text-center shadow-sm col-span-2 sm:col-span-1">
+                <span class="text-xl">💃</span>
+                <p class="text-xs font-bold mt-1 text-neutral-700">Kathak Dancer</p>
+            </div>
+        </div>
+        
+        <div class="flex flex-wrap gap-4 justify-center md:justify-start pt-2">
+            <a href="#dreams" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold px-7 py-3 rounded-full shadow-lg shadow-indigo-600/20 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 flex items-center gap-2">
+                <i class="fa-solid fa-user-shield"></i> Explore My Aspirations
+            </a>
+            <a href="#crafts" class="bg-amber-50 hover:bg-amber-100 text-amber-950 font-bold px-7 py-3 rounded-full transition-all duration-300 flex items-center gap-2 border border-amber-200">
+                <i class="fa-solid fa-palette"></i> See My Art
+            </a>
         </div>
     </div>
 </header>
 
-<!-- Crafts & Painting Section -->
+<section id="dreams" class="bg-gradient-to-b from-indigo-50/70 to-blue-50/50 py-16 border-y border-indigo-100/50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-12 space-y-3">
+            <div class="inline-flex items-center gap-2 px-3 py-1 bg-indigo-100 text-indigo-800 text-xs font-bold tracking-wider uppercase rounded-full">
+                🛡️ Future Defense Leader
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-bold text-neutral-900">What I Want To Become In Life</h2>
+            <p class="text-neutral-500 text-sm sm:text-base">
+                Discover my core dedication towards serving our nation in the military, as detailed in my personal dream board journal entry.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <!-- Journal Page (dreme.jpeg) -->
+            <div class="lg:col-span-5 flex justify-center">
+                <div class="relative w-full max-w-sm bg-white p-4 rounded-3xl shadow-xl border border-indigo-100 transform -rotate-1 hover:rotate-0 transition-transform duration-300">
+                    <span class="absolute top-6 left-6 bg-indigo-600 text-white font-bold text-xs py-1 px-3 rounded-full shadow-md z-10">
+                        📖 My Dream Journal
+                    </span>
+                    <!-- VERBATIM: dreme.jpeg -->
+                    <img src="dreme.jpeg" 
+                         alt="Viva's Dream board writing" 
+                         class="w-full h-[400px] object-cover rounded-2xl shadow-inner mb-2"
+                         onerror="this.onerror=null; this.src='https://placehold.co/600x800/eef2ff/312e81?text=My+Dream+Board';">
+                    <p class="text-center text-xs font-bold text-neutral-400 mt-2">Handwritten Entry: "What to become in life"</p>
+                </div>
+            </div>
+
+            <!-- Interactives representing Army, Navy, Airforce -->
+            <div class="lg:col-span-7 space-y-6">
+                <h3 class="text-2xl font-bold text-indigo-950">Mission Control Simulator</h3>
+                <p class="text-neutral-600 text-sm sm:text-base leading-relaxed">
+                    I aim to serve with dedication. Interact with the systems below to experience operations within my dream military wings!
+                </p>
+
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <!-- Army card -->
+                    <div onclick="testDefenseSound('army')" class="bg-white p-5 rounded-2xl border border-indigo-50 hover:border-emerald-300 shadow-sm cursor-pointer transition-all duration-300 group hover:-translate-y-1">
+                        <div class="w-12 h-12 rounded-xl bg-emerald-100 flex items-center justify-center text-emerald-700 mb-4 group-hover:bg-emerald-500 group-hover:text-white transition-all">
+                            <i class="fa-solid fa-person-rifle text-xl"></i>
+                        </div>
+                        <h4 class="font-bold text-neutral-800 text-base">Army Officer</h4>
+                        <p class="text-xs text-neutral-500 mt-1">Ground operation readiness, tactical strategies, and extreme resilience.</p>
+                        <span class="text-xs font-bold text-emerald-600 inline-flex items-center gap-1 mt-3">Tap to Deploy <i class="fa-solid fa-angle-right"></i></span>
+                    </div>
+
+                    <!-- Navy card -->
+                    <div onclick="testDefenseSound('navy')" class="bg-white p-5 rounded-2xl border border-indigo-50 hover:border-blue-300 shadow-sm cursor-pointer transition-all duration-300 group hover:-translate-y-1">
+                        <div class="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center text-blue-700 mb-4 group-hover:bg-blue-500 group-hover:text-white transition-all">
+                            <i class="fa-solid fa-ship text-xl"></i>
+                        </div>
+                        <h4 class="font-bold text-neutral-800 text-base">Navy Commander</h4>
+                        <p class="text-xs text-neutral-500 mt-1">Ocean-going defensive systems and naval tactical supremacy.</p>
+                        <span class="text-xs font-bold text-blue-600 inline-flex items-center gap-1 mt-3">Boot Up Sonar <i class="fa-solid fa-angle-right"></i></span>
+                    </div>
+
+                    <!-- Air Force card -->
+                    <div onclick="testDefenseSound('airforce')" class="bg-white p-5 rounded-2xl border border-indigo-50 hover:border-sky-300 shadow-sm cursor-pointer transition-all duration-300 group hover:-translate-y-1">
+                        <div class="w-12 h-12 rounded-xl bg-sky-100 flex items-center justify-center text-sky-700 mb-4 group-hover:bg-sky-500 group-hover:text-white transition-all">
+                            <i class="fa-solid fa-jet-fighter text-xl"></i>
+                        </div>
+                        <h4 class="font-bold text-neutral-800 text-base">Airforce Pilot</h4>
+                        <p class="text-xs text-neutral-500 mt-1">High-speed supersonic interceptions and sky defense tactics.</p>
+                        <span class="text-xs font-bold text-sky-600 inline-flex items-center gap-1 mt-3">Start Engine <i class="fa-solid fa-angle-right"></i></span>
+                    </div>
+                </div>
+
+                <!-- Simulation console area -->
+                <div class="bg-neutral-900 text-emerald-400 p-5 rounded-2xl font-mono text-xs border-2 border-neutral-800 shadow-lg relative overflow-hidden h-36">
+                    <div class="absolute top-0 right-0 p-3 opacity-15">
+                        <i class="fa-solid fa-satellite-dish text-6xl animate-pulse"></i>
+                    </div>
+                    <!-- Radar Sweeper graphic -->
+                    <div id="radarGraphic" class="absolute left-6 top-6 w-24 h-24 border border-emerald-500/50 rounded-full hidden flex items-center justify-center">
+                        <div class="w-2 h-2 bg-emerald-500 rounded-full"></div>
+                        <div class="absolute inset-0 border border-emerald-500 rounded-full radar-wave"></div>
+                    </div>
+                    <div id="consoleText" class="space-y-1 mt-2">
+                        <p class="text-white font-bold">&gt; DEFENSE COMMAND READY</p>
+                        <p class="text-emerald-500/80">Awaiting selection of service wing to begin deployment tests...</p>
+                        <p class="text-neutral-500">Standby: 11-year-old cadet candidate is fully prepared.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <section id="crafts" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
     <div class="text-center max-w-2xl mx-auto mb-12 space-y-3">
         <div class="inline-flex items-center gap-2 px-3 py-1 bg-amber-100 border border-amber-200 text-amber-800 text-xs font-bold tracking-wider uppercase rounded-full">
-            ✨ Stitch by Stitch & Stroke by Stroke
+            🎨 Stitch & Shade Studio
         </div>
-        <h2 class="text-3xl sm:text-4xl font-bold text-neutral-900 flex items-center justify-center gap-2">
-            🎨 The Cozy Craft & Painting Studio
-        </h2>
+        <h2 class="text-3xl sm:text-4xl font-bold text-neutral-900">Cozy Woolen & Sketch Gallery</h2>
         <p class="text-neutral-500 text-sm sm:text-base">
-            Handcrafted woolens and vibrant canvases created straight from my heart. Give a heart to your favorite creations!
+            These are my actual hand-knitted creations. Tap on each image card to see the project specifications or vote for your favorite design!
         </p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-        <!-- Card 1: Crochet creations -->
-        <div class="bg-white rounded-3xl overflow-hidden shadow-md hover-card border border-rose-500/10 group">
-            <div class="h-64 sm:h-80 overflow-hidden relative">
-                <!-- Verbatim Image Reference for Crochet -->
+    <!-- Gallery Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Pink Mug Sleeve -->
+        <div class="bg-white rounded-3xl overflow-hidden shadow-md border border-neutral-100 premium-card group">
+            <div class="h-80 overflow-hidden relative">
+                <!-- VERBATIM: WhatsApp Image 2026-06-22 at 9.52.00 AM.jpeg -->
                 <img src="WhatsApp Image 2026-06-22 at 9.52.00 AM.jpeg" 
-                     alt="Crochet Creations" 
+                     alt="Crochet cup sleeve pink" 
                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                     onerror="this.onerror=null; this.src='https://placehold.co/600x400/fffbeb/b45309?text=Cozy+Crochet+Studio';">
-                <span class="absolute top-4 left-4 bg-rose-500/90 backdrop-blur-sm text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider shadow-md">
-                    🧶 Hand-Knit Woolens
+                     onerror="this.onerror=null; this.src='https://placehold.co/600x400/fee2e2/9f1239?text=Pink+Cup+Cozy';">
+                <span class="absolute top-4 left-4 bg-rose-500 text-white text-xs font-extrabold px-3 py-1 rounded-full uppercase tracking-wider shadow">
+                    🧶 Mug Cozy
                 </span>
             </div>
-            <div class="p-6 sm:p-8 space-y-4">
-                <h3 class="text-2xl font-bold text-neutral-900">Cozy Woolen Crochet Collections</h3>
-                <p class="text-neutral-600 text-sm sm:text-base leading-relaxed">
-                    Miniature plushies, adorable colorful turtles, bookmarks, and vibrant toys. I find so much joy and patience in choosing the softest yarn and counting each row hook-by-hook.
-                </p>
-                <div class="flex items-center justify-between pt-4 border-t border-rose-50/50">
-                    <span class="text-xs font-semibold text-neutral-400">Published: June 2026</span>
-                    <button onclick="addLike('crochetLikes')" class="bg-rose-50 hover:bg-rose-100 text-rose-600 font-bold px-4 py-2.5 rounded-full flex items-center gap-2 transition-all duration-300 active:scale-95 shadow-sm">
-                        <i class="fa-solid fa-heart text-rose-500 animate-pulse"></i> Love this! <span id="crochetLikes" class="bg-white px-2 py-0.5 rounded-full text-xs shadow-inner">128</span>
+            <div class="p-6 space-y-3">
+                <h3 class="text-xl font-bold text-neutral-900">Soft Pink Mug Cozy Sleeve</h3>
+                <p class="text-neutral-500 text-xs">Features dynamic double-stitch textured grids custom fit for warm porcelain mugs and stationery holders.</p>
+                <div class="flex items-center justify-between pt-4 border-t border-neutral-50">
+                    <button onclick="upvote('mugLikes')" class="text-xs font-bold bg-rose-50 text-rose-600 hover:bg-rose-100 px-3 py-2 rounded-full transition-all flex items-center gap-1.5">
+                        <i class="fa-solid fa-heart"></i> Love it! <span id="mugLikes" class="font-black">154</span>
                     </button>
+                    <span class="text-[10px] uppercase font-bold tracking-wider text-neutral-400">Yarn Style: Soft Wool</span>
                 </div>
             </div>
         </div>
 
-        <!-- Card 2: Painting creations -->
-        <div class="bg-white rounded-3xl overflow-hidden shadow-md hover-card border border-rose-500/10 group">
-            <div class="h-64 sm:h-80 overflow-hidden relative">
-                <!-- Verbatim Image Reference for Watercolor Canvas Painting -->
-                <img src="WhatsApp Image
+        <!-- White & Purple Flower Square -->
+        <div class="bg-white rounded-3xl overflow-hidden shadow-md border border-neutral-100 premium-card group">
+            <div class="h-80 overflow-hidden relative">
+                <!-- VERBATIM: WhatsApp Image 2026-06-22 at 9.52.17 AM.jpeg -->
+                <img src="WhatsApp Image 2026-06-22 at 9.52.17 AM.jpeg" 
+                     alt="White & Purple crochet flower square" 
+                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                     onerror="this.onerror=null; this.src='https://placehold.co/600x400/faf5ff/6b21a8?text=Floral+Square';">
+                <span class="absolute top-4 left-4 bg-purple-500 text-white text-xs font-extrabold px-3 py-1 rounded-full uppercase tracking-wider shadow">
+                    🧶 Granny Square
+                </span>
+            </div>
+            <div class="p-6 space-y-3">
+                <h3 class="text-xl font-bold text-neutral-900">Purple Daisy Granny Square</h3>
+                <p class="text-neutral-500 text-xs">Exhibits an intricate 8-petal purple blossom centered with natural beige wool on a pristine white grid border.</p>
+                <div class="flex items-center justify-between pt-4 border-t border-neutral-50">
+                    <button onclick="upvote('flowerLikes')" class="text-xs font-bold bg-purple-50 text-purple-600 hover:bg-purple-100 px-3 py-2 rounded-full transition-all flex items-center gap-1.5">
+                        <i class="fa-solid fa-heart"></i> Beautiful! <span id="flowerLikes" class="font-black">218</span>
+                    </button>
+                    <span class="text-[10px] uppercase font-bold tracking-wider text-neutral-400">Yarn Style: Acrylic</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Round Crochet Mat -->
+        <div class="bg-white rounded-3xl overflow-hidden shadow-md border border-neutral-100 premium-card group">
+            <div class="h-80 overflow-hidden relative">
+                <!-- VERBATIM: WhatsApp Image 2026-06-22 at 9.52.49 AM.jpeg -->
+                <img src="WhatsApp Image 2026-06-22 at 9.52.49 AM.jpeg" 
+                     alt="Circular purple and white mat" 
+                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                     onerror="this.onerror=null; this.src='https://placehold.co/600x400/f3e8ff/581c87?text=Circular+Coaster';">
+                <span class="absolute top-4 left-4 bg-indigo-500 text-white text-xs font-extrabold px-3 py-1 rounded-full uppercase tracking-wider shadow">
+                    🧶 Coaster Mat
+                </span>
+            </div>
+            <div class="p-6 space-y-3">
+                <h3 class="text-xl font-bold text-neutral-900">Rhythmic Circular Teacup Coaster</h3>
+                <p class="text-neutral-500 text-xs">A circular coaster featuring concentric rings of deep majestic purple and cream white loop designs.</p>
+                <div class="flex items-center justify-between pt-4 border-t border-neutral-50">
+                    <button onclick="upvote('matLikes')" class="text-xs font-bold bg-indigo-50 text-indigo-600 hover:bg-indigo-100 px-3 py-2 rounded-full transition-all flex items-center gap-1.5">
+                        <i class="fa-solid fa-heart"></i> Perfect loop! <span id="matLikes" class="font-black">193</span>
+                    </button>
+                    <span class="text-[10px] uppercase font-bold tracking-wider text-neutral-400">Yarn Style: Cotton Blend</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="travel" class="bg-gradient-to-r from-teal-50 to-emerald-50 py-16 border-t border-teal-100">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-12 space-y-3">
+            <div class="inline-flex items-center gap-2 px-3 py-1 bg-teal-100 border border-teal-200 text-teal-800 text-xs font-bold tracking-wider uppercase rounded-full">
+                🗺️ Hand-Written Travel Logs
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-bold text-neutral-900">🌍 Polaroid Travel Diaries</h2>
+            <p class="text-neutral-500 text-sm sm:text-base">
+                I capture my adventures dynamically in visual journals. Flick through the handwritten pages of my real travels across beautiful India!
+            </p>
+        </div>
+
+        <!-- Slider container -->
+        <div class="relative max-w-4xl mx-auto">
+            <div id="polaroidContainer" class="flex overflow-x-auto gap-6 scroll-smooth snap-x snap-mandatory custom-scrollbar pb-6 px-4">
+                
+                <!-- Nashik Entry -->
+                <div class="snap-center shrink-0 w-80 sm:w-96 bg-white p-5 rounded-3xl shadow-lg border border-teal-50 space-y-4">
+                    <div class="h-80 bg-neutral-100 rounded-2xl overflow-hidden border border-neutral-200/50">
+                        <!-- VERBATIM: nashik.jpeg -->
+                        <img src="nashik.jpeg" alt="Nashik travel journal" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/600x600/f0fdf4/0f766e?text=Nashik+Diaries';">
+                    </div>
+                    <div class="space-y-1">
+                        <span class="text-teal-700 text-xs font-bold uppercase tracking-wider">🚣 Boating & Temples</span>
+                        <h4 class="text-lg font-bold text-neutral-900">Nashik Expedition</h4>
+                        <p class="text-neutral-600 text-xs leading-relaxed">
+                            Visited holy temples like Ram Mandir, Trimbakeshwar, Kalaram & Goraram, completed boating at Gangapur Dam and stayed at Devlali cantonment.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Delhi Entry -->
+                <div class="snap-center shrink-0 w-80 sm:w-96 bg-white p-5 rounded-3xl shadow-lg border border-teal-50 space-y-4">
+                    <div class="h-80 bg-neutral-100 rounded-2xl overflow-hidden border border-neutral-200/50">
+                        <!-- VERBATIM: WhatsApp Image 2026-06-22 at 9.54.36 AM.jpeg -->
+                        <img src="WhatsApp Image 2026-06-22 at 9.54.36 AM.jpeg" alt="Delhi travel log" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/600x600/f0fdf4/0f766e?text=Delhi+Diaries';">
+                    </div>
+                    <div class="space-y-1">
+                        <span class="text-teal-700 text-xs font-bold uppercase tracking-wider">✈️ Indigo Air Travels</span>
+                        <h4 class="text-lg font-bold text-neutral-900">Amritsar & Golden Temple</h4>
+                        <p class="text-neutral-600 text-xs leading-relaxed">
+                            Flew beside Veera didi to explore the peaceful Golden Temple in Amritsar, lodging in a historic guest house!
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Kashmir Entry -->
+                <div class="snap-center shrink-0 w-80 sm:w-96 bg-white p-5 rounded-3xl shadow-lg border border-teal-50 space-y-4">
+                    <div class="h-80 bg-neutral-100 rounded-2xl overflow-hidden border border-neutral-200/50">
+                        <!-- VERBATIM: WhatsApp Image 2026-06-22 at 9.55.59 AM.jpeg -->
+                        <img src="WhatsApp Image 2026-06-22 at 9.55.59 AM.jpeg" alt="Kashmir travel journal" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/600x600/f0fdf4/0f766e?text=Kashmir+Snowy+Diaries';">
+                    </div>
+                    <div class="space-y-1">
+                        <span class="text-teal-700 text-xs font-bold uppercase tracking-wider">❄️ Gulmarg Horses</span>
+                        <h4 class="text-lg font-bold text-neutral-900">Snowy Kashmir peaks</h4>
+                        <p class="text-neutral-600 text-xs leading-relaxed">
+                            Played inside freezing snow using gumboots, rode brown & black horses across mountainous terrains, and slept in Srinagar guest house.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Srinagar posting -->
+                <div class="snap-center shrink-0 w-80 sm:w-96 bg-white p-5 rounded-3xl shadow-lg border border-teal-50 space-y-4">
+                    <div class="h-80 bg-neutral-100 rounded-2xl overflow-hidden border border-neutral-200/50">
+                        <!-- VERBATIM: WhatsApp Image 2026-06-22 at 9.56.25 AM.jpeg -->
+                        <img src="WhatsApp Image 2026-06-22 at 9.56.25 AM.jpeg" alt="Baramulla Srinagar info" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/600x600/f0fdf4/0f766e?text=Baramulla+Notes';">
+                    </div>
+                    <div class="space-y-1">
+                        <span class="text-teal-700 text-xs font-bold uppercase tracking-wider">📍 Baramulla Srinagar</span>
+                        <h4 class="text-lg font-bold text-neutral-900">Ajit Uncle's Posting</h4>
+                        <p class="text-neutral-600 text-xs leading-relaxed">
+                            Captured memories of Ajit uncle's strategic posting location near Baramulla in beautiful Srinagar.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Helper scroll buttons -->
+            <div class="flex justify-center gap-4 mt-4">
+                <button onclick="scrollPolaroid('left')" class="w-10 h-10 rounded-full bg-white border border-teal-200 text-teal-800 hover:bg-teal-50 transition shadow flex items-center justify-center">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <span class="text-xs text-neutral-400 font-bold self-center">Swipe or click buttons to explore</span>
+                <button onclick="scrollPolaroid('right')" class="w-10 h-10 rounded-full bg-white border border-teal-200 text-teal-800 hover:bg-teal-50 transition shadow flex items-center justify-center">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="fun-zone" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <!-- Interactive Canvas-based Game panel -->
+        <div class="space-y-6">
+            <div class="inline-flex items-center gap-2 px-3 py-1 bg-orange-100 text-orange-800 text-xs font-bold tracking-wider uppercase rounded-full">
+                🏀 Dynamic Physical Training
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-bold text-neutral-900">Shoot Hoop Trainer!</h2>
+            <p class="text-neutral-600 text-sm sm:text-base leading-relaxed">
+                Basketball helps me focus on speed, teamwork, and projectile precision! Tap anywhere inside the canvas below to throw the basketball towards the rim. Let's see your high score!
+            </p>
+
+            <!-- Game Box -->
+            <div class="bg-white p-4 rounded-3xl border border-orange-100 shadow-md space-y-3">
+                <div class="flex items-center justify-between text-xs font-bold text-orange-950">
+                    <span>🏀 Swipe/Click up to shoot!</span>
+                    <span class="bg-orange-100 text-orange-900 px-3 py-1 rounded-full">High Score: <span id="gameHighScore">0</span></span>
+                </div>
+                
+                <!-- Game Canvas container -->
+                <div class="relative w-full aspect-video bg-sky-50 border-2 border-dashed border-orange-200 rounded-2xl overflow-hidden">
+                    <canvas id="basketballCanvas" class="w-full h-full block cursor-crosshair"></canvas>
+                    <div id="gameOverlay" class="absolute inset-0 bg-neutral-900/60 backdrop-blur-xs flex flex-col items-center justify-center text-white p-4 text-center">
+                        <span class="text-3xl mb-2">🏀</span>
+                        <h4 class="font-bold text-base">Interactive Court Drills</h4>
+                        <p class="text-xs text-neutral-300 max-w-xs mt-1">Tap standard target line or drag/swipe the ball to release!</p>
+                        <button onclick="startGame()" class="mt-4 px-6 py-2 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-full transition text-xs shadow-md">Start Practice Session</button>
+                    </div>
+                </div>
+                
+                <div class="flex items-center justify-between text-xs">
+                    <span id="scoreText" class="text-neutral-500">Current Score: <span class="font-extrabold text-orange-600" id="gameScore">0</span></span>
+                    <button onclick="resetGameScore()" class="text-rose-500 hover:underline font-bold">Reset Score</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="space-y-6 bg-rose-50/50 p-8 rounded-3xl border border-rose-100">
+            <div class="inline-flex items-center gap-2 px-3 py-1 bg-rose-100 text-rose-800 text-xs font-bold tracking-wider uppercase rounded-full">
+                💃 Rhythmic Footwork Chimes
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-bold text-neutral-900">Kathak Taal & Ghungroo Simulator</h2>
+            <p class="text-neutral-600 text-sm sm:text-base leading-relaxed">
+                Kathak is a classic dance where feet strike matching cycles (Laya). Strap on virtual **Ghungroos** below and toggle on the classical **Teental rhythm (16-beat)** synthesizer loop:
+            </p>
+
+            <div class="space-y-4">
+                <div class="grid grid-cols-2 gap-4">
+                    <button onclick="triggerKathakSound('clap')" class="p-4 bg-white hover:bg-rose-100/50 border border-rose-200 rounded-2xl font-bold text-rose-800 flex flex-col items-center gap-2 transition-all duration-200 active:scale-95 shadow-sm">
+                        <span class="text-3xl">👏</span>
+                        <span class="text-xs">Ta / Hand Clap</span>
+                    </button>
+                    <button onclick="triggerKathakSound('ghungroo')" class="p-4 bg-white hover:bg-rose-100/50 border border-rose-200 rounded-2xl font-bold text-rose-800 flex flex-col items-center gap-2 transition-all duration-200 active:scale-95 shadow-sm">
+                        <span class="text-3xl">🔔</span>
+                        <span class="text-xs">Ghungroo Chime</span>
+                    </button>
+                </div>
+
+                <!-- Synthesizer Loop Controls -->
+                <div class="bg-white p-5 rounded-2xl border border-rose-150 space-y-3">
+                    <div class="flex items-center justify-between text-xs font-bold text-rose-950">
+                        <span>Autoloop Tempo Beat</span>
+                        <span id="loopDisplayStatus" class="bg-neutral-900 text-rose-400 font-mono px-2 py-0.5 rounded">STOPPED</span>
+                    </div>
+
+                    <!-- Step Indicators -->
+                    <div class="grid grid-cols-8 gap-1">
+                        <div id="step-1" class="h-2 rounded bg-neutral-200 transition-all"></div>
+                        <div id="step-2" class="h-2 rounded bg-neutral-200 transition-all"></div>
+                        <div id="step-3" class="h-2 rounded bg-neutral-200 transition-all"></div>
+                        <div id="step-4" class="h-2 rounded bg-neutral-200 transition-all"></div>
+                        <div id="step-5" class="h-2 rounded bg-neutral-200 transition-all"></div>
+                        <div id="step-6" class="h-2 rounded bg-neutral-200 transition-all"></div>
+                        <div id="step-7" class="h-2 rounded bg-neutral-200 transition-all"></div>
+                        <div id="step-8" class="h-2 rounded bg-neutral-200 transition-all"></div>
+                    </div>
+                    
+                    <button id="tempoBtn" onclick="toggleTeentalLoop()" class="w-full py-3 bg-rose-500 hover:bg-rose-600 text-white font-bold rounded-xl transition shadow-md flex items-center justify-center gap-2 text-sm">
+                        <i class="fa-solid fa-play"></i> Engage Teental Loop
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="bg-gradient-to-br from-indigo-900 to-slate-900 text-white rounded-3xl p-8 sm:p-12 shadow-xl relative overflow-hidden">
+        <!-- Interactive Vibe quiz -->
+        <div id="quizArea" class="space-y-6 relative z-10">
+            <div class="text-center space-y-2">
+                <span class="text-xs font-bold tracking-wider text-amber-400 uppercase">Interactive Vibe Matcher</span>
+                <h3 class="text-3xl font-bold">Which creative hobby matches you today?</h3>
+                <p class="text-indigo-200 text-xs sm:text-sm">Answer Viva's rapid questionnaire to unlock your spirit inspiration!</p>
+            </div>
+
+            <!-- Quiz Steps -->
+            <div id="quizStepBody" class="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/10 text-center space-y-4">
+                <p id="quizQuestion" class="font-bold text-base text-white">Question details loading...</p>
+                <div id="quizOptions" class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                    <!-- Dynamic buttons injected by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer with ZIP source credit verbatim -->
+<footer class="bg-neutral-900 text-neutral-400 py-12 border-t border-neutral-800 text-xs sm:text-sm">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 text-center">
+        <div class="flex items-center justify-center gap-2 text-white">
+            <span class="text-orange-500 text-lg"><i class="fa-solid fa-heart animate-pulse"></i></span>
+            <span class="serif-font font-bold text-lg">Viva's Creative Portfolio & Dream Board</span>
+        </div>
+        <p>Created with love, knitting needles, watercolors, court drills, and military dreams.</p>
+        <p class="text-neutral-500">&copy; 2026 Viva's Creative Hub. All rights reserved.</p>
+    </div>
+</footer>
+
+<script>
+// Toggle mobile navigation status
+function toggleMobileNav() {
+    const menu = document.getElementById('mobileNavMenu');
+    const icon = document.getElementById('menuNavIcon');
+    if (menu.classList.contains('hidden')) {
+        menu.classList.remove('hidden');
+        icon.className = "fa-solid fa-xmark text-xl";
+    } else {
+        menu.classList.add('hidden');
+        icon.className = "fa-solid fa-bars text-xl";
+    }
+}
+
+// Craft upvotes
+function upvote(elementId) {
+    const el = document.getElementById(elementId);
+    let current = parseInt(el.innerText);
+    el.innerText = current + 1;
+    
+    el.classList.add('scale-125', 'text-amber-500', 'font-black');
+    setTimeout(() => {
+        el.classList.remove('scale-125', 'text-amber-500', 'font-black');
+    }, 250);
+}
+
+// Polaroid Scroller
+function scrollPolaroid(direction) {
+    const container = document.getElementById('polaroidContainer');
+    const scrollAmount = 300;
+    if (direction === 'left') {
+        container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    } else {
+        container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
+}
+
+/* Classic Audio API Synths */
+let audioCtx = null;
+function initSynth() {
+    if (!audioCtx) {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    }
+}
+
+// Sound generators representing army, navy, and airforce
+function testDefenseSound(branch) {
+    try {
+        initSynth();
+        if (audioCtx.state === 'suspended') {
+            audioCtx.resume();
+        }
+        
+        const consoleEl = document.getElementById('consoleText');
+        const radar = document.getElementById('radarGraphic');
+        
+        if (branch === 'army') {
+            radar.classList.add('hidden');
+            consoleEl.innerHTML = `
+                <p class="text-white font-bold">&gt; ARMY SERVICE MODULE DEPLOYED</p>
+                <p class="text-emerald-400">Status: Drill ground coordinates locked. Heavy infantry tactical defense systems online.</p>
+                <p class="text-neutral-500">Brave hearts lead the line.</p>
+            `;
+            // Low military drum synth
+            let osc = audioCtx.createOscillator();
+            let gain = audioCtx.createGain();
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+            osc.frequency.setValueAtTime(110, audioCtx.currentTime);
+            osc.frequency.exponentialRampToValueAtTime(40, audioCtx.currentTime + 0.15);
+            gain.gain.setValueAtTime(1, audioCtx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.18);
+            osc.start();
+            osc.stop(audioCtx.currentTime + 0.2);
+            
+        } else if (branch === 'navy') {
+            radar.classList.remove('hidden');
+            consoleEl.innerHTML = `
+                <p class="text-white font-bold">&gt; NAVY SONAR PING ACTIVE</p>
+                <p class="text-blue-400">Status: Deep water scanning complete. No unauthorized submarines detected.</p>
+                <p class="text-neutral-500">Shielding coastlines & sovereign waters.</p>
+            `;
+            // High sonar synth
+            let osc = audioCtx.createOscillator();
+            let gain = audioCtx.createGain();
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+            osc.frequency.setValueAtTime(1200, audioCtx.currentTime);
+            gain.gain.setValueAtTime(0.5, audioCtx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 1.2);
+            osc.start();
+            osc.stop(audioCtx.currentTime + 1.3);
+            
+        } else if (branch === 'airforce') {
+            radar.classList.add('hidden');
+            consoleEl.innerHTML = `
+                <p class="text-white font-bold">&gt; AIRFORCE SUPERSONIC AFTERBURNER</p>
+                <p class="text-sky-400">Status: Fighter engine initiated. Vectoring sky boundaries at Mach 2.2.</p>
+                <p class="text-neutral-500">Touch the sky with glory.</p>
+            `;
+            // Jet exhaust sound using synthetic noise buffer
+            const bufferSize = audioCtx.sampleRate * 0.4;
+            const buffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+            const data = buffer.getChannelData(0);
+            for (let i = 0; i < bufferSize; i++) {
+                data[i] = Math.random() * 2 - 1;
+            }
+            const noise = audioCtx.createBufferSource();
+            noise.buffer = buffer;
+            const filter = audioCtx.createBiquadFilter();
+            filter.type = 'lowpass';
+            filter.frequency.setValueAtTime(400, audioCtx.currentTime);
+            filter.frequency.exponentialRampToValueAtTime(1200, audioCtx.currentTime + 0.3);
+            
+            const gain = audioCtx.createGain();
+            gain.gain.setValueAtTime(0.4, audioCtx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.4);
+            
+            noise.connect(filter);
+            filter.connect(gain);
+            gain.connect(audioCtx.destination);
+            noise.start();
+            noise.stop(audioCtx.currentTime + 0.45);
+        }
+    } catch (e) {
+        console.warn("Audio Context blocked, waiting for click", e);
+    }
+}
+
+// Kathak Synth triggering
+function triggerKathakSound(type) {
+    try {
+        initSynth();
+        if (audioCtx.state === 'suspended') {
+            audioCtx.resume();
+        }
+
+        if (type === 'clap') {
+            let osc = audioCtx.createOscillator();
+            let gain = audioCtx.createGain();
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+            osc.frequency.setValueAtTime(320, audioCtx.currentTime);
+            osc.frequency.exponentialRampToValueAtTime(90, audioCtx.currentTime + 0.08);
+            gain.gain.setValueAtTime(0.8, audioCtx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.08);
+            osc.start();
+            osc.stop(audioCtx.currentTime + 0.1);
+        } else if (type === 'ghungroo') {
+            // High metallic cluster sound
+            let osc = audioCtx.createOscillator();
+            let filter = audioCtx.createBiquadFilter();
+            let gain = audioCtx.createGain();
+            
+            osc.type = 'triangle';
+            osc.frequency.setValueAtTime(5000, audioCtx.currentTime);
+            osc.frequency.setValueAtTime(3800, audioCtx.currentTime + 0.03);
+            
+            filter.type = 'highpass';
+            filter.frequency.value = 2200;
+            
+            osc.connect(filter);
+            filter.connect(gain);
+            gain.connect(audioCtx.destination);
+            
+            gain.gain.setValueAtTime(0.5, audioCtx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.18);
+            
+            osc.start();
+            osc.stop(audioCtx.currentTime + 0.2);
+        }
+    } catch(err) {
+        console.warn(err);
+    }
+}
+
+// Teental Autoloop
+let loopInterval = null;
+let currentStep = 1;
+function toggleTeentalLoop() {
+    const btn = document.getElementById('tempoBtn');
+    const display = document.getElementById('loopDisplayStatus');
+    
+    if (loopInterval) {
+        clearInterval(loopInterval);
+        loopInterval = null;
+        btn.innerHTML = '<i class="fa-solid fa-play"></i> Engage Teental Loop';
+        display.innerText = "STOPPED";
+        display.className = "bg-neutral-900 text-rose-400 font-mono px-2 py-0.5 rounded";
+        // Reset steps colors
+        for (let i = 1; i <= 8; i++) {
+            document.getElementById(`step-${i}`).className = "h-2 rounded bg-neutral-200 transition-all";
+        }
+    } else {
+        initSynth();
+        currentStep = 1;
+        display.innerText = "LOOPING BEATS";
+        display.className = "bg-rose-600 text-white font-mono px-2 py-0.5 rounded animate-pulse";
+        btn.innerHTML = '<i class="fa-solid fa-square-term"></i> Disengage Teental Loop';
+        
+        loopInterval = setInterval(() => {
+            // Reset previous steps
+            for (let i = 1; i <= 8; i++) {
+                document.getElementById(`step-${i}`).className = "h-2 rounded bg-neutral-200 transition-all";
+            }
+            // Highlight current step
+            document.getElementById(`step-${currentStep}`).className = "h-2 rounded bg-rose-500 transition-all scale-y-125 shadow-md shadow-rose-500/35";
+            
+            // Classical pattern play:
+            if (currentStep === 1 || currentStep === 5) {
+                triggerKathakSound('clap');
+                triggerKathakSound('ghungroo');
+            } else {
+                triggerKathakSound('ghungroo');
+            }
+            
+            currentStep = (currentStep % 8) + 1;
+        }, 400);
+    }
+}
+
+/* Basketball Mini-Game Physics Canvas Engine */
+const canvas = document.getElementById('basketballCanvas');
+const ctx = canvas.getContext('2d');
+let ballX, ballY, ballRadius = 14;
+let startX, startY;
+let isDragging = false;
+let score = 0;
+let highScore = 0;
+let basketX, basketY, basketWidth = 35;
+let ballVx = 0, ballVy = 0;
+let isShot = false;
+
+function initGame() {
+    resizeCanvas();
+    resetBall();
+    basketX = canvas.width - 60;
+    basketY = 50;
+    score = 0;
+    document.getElementById('gameScore').innerText = score;
+}
+
+function resizeCanvas() {
+    canvas.width = canvas.parentElement.clientWidth;
+    canvas.height = canvas.parentElement.clientHeight;
+}
+
+function resetBall() {
+    ballX = 60;
+    ballY = canvas.height - 50;
+    ballVx = 0;
+    ballVy = 0;
+    isShot = false;
+    isDragging = false;
+}
+
+function startGame() {
+    document.getElementById('gameOverlay').classList.add('hidden');
+    initGame();
+    draw();
+}
+
+function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+    // Draw court background horizon
+    ctx.strokeStyle = '#ea580c';
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.moveTo(0, canvas.height - 20);
+    ctx.lineTo(canvas.width, canvas.height - 20);
+    ctx.stroke();
+
+    // Draw Basket Ring backboard & Net
+    ctx.fillStyle = '#1e293b';
+    ctx.fillRect(basketX + basketWidth, basketY - 20, 8, 40); // Backboard
+    
+    ctx.strokeStyle = '#e11d48';
+    ctx.lineWidth = 4;
+    ctx.beginPath();
+    ctx.moveTo(basketX, basketY);
+    ctx.lineTo(basketX + basketWidth, basketY); // Rim
+    ctx.stroke();
+
+    // Draw Net mesh lines
+    ctx.strokeStyle = '#e2e8f0';
+    ctx.lineWidth = 1.5;
+    ctx.beginPath();
+    ctx.moveTo(basketX, basketY);
+    ctx.lineTo(basketX + 10, basketY + 25);
+    ctx.lineTo(basketX + basketWidth - 10, basketY + 25);
+    ctx.lineTo(basketX + basketWidth, basketY);
+    ctx.stroke();
+
+    // Draw drag guide vector line
+    if (isDragging) {
+        ctx.strokeStyle = '#f97316';
+        ctx.setLineDash([4, 4]);
+        ctx.beginPath();
+        ctx.moveTo(ballX, ballY);
+        // Project pull direction vector
+        let dx = startX - ballX;
+        let dy = startY - ballY;
+        ctx.lineTo(ballX + dx, ballY + dy);
+        ctx.stroke();
+        ctx.setLineDash([]);
+    }
+
+    // Draw Basketball
+    ctx.fillStyle = '#f97316';
+    ctx.beginPath();
+    ctx.arc(ballX, ballY, ballRadius, 0, Math.PI * 2);
+    ctx.fill();
+    // Inner black lines
+    ctx.strokeStyle = '#431407';
+    ctx.lineWidth = 1.5;
+    ctx.beginPath();
+    ctx.arc(ballX, ballY, ballRadius, -Math.PI / 4, Math.PI / 4);
+    ctx.stroke();
+
+    // Physics Engine loop
+    if (isShot) {
+        ballVy += 0.35; // Gravity pull
+        ballX += ballVx;
+        ballY += ballVy;
+
+        // Wall collisions
+        if (ballX - ballRadius < 0 || ballX + ballRadius > canvas.width) {
+            ballVx *= -0.8;
+        }
+
+        // Rim collisions check
+        let rimDistX = ballX - (basketX + basketWidth / 2);
+        let rimDistY = ballY - basketY;
+        if (Math.abs(rimDistY) < 15 && ballX > basketX && ballX < basketX + basketWidth) {
+            // Hit net / Score point!
+            score++;
+            document.getElementById('gameScore').innerText = score;
+            if (score > highScore) {
+                highScore = score;
+                document.getElementById('gameHighScore').innerText = highScore;
+            }
+            triggerKathakSound('clap'); // Play hit sound
+            resetBall();
+        }
+
+        // Ball bottom fall-off reset
+        if (ballY - ballRadius > canvas.height) {
+            resetBall();
+        }
+    }
+
+    requestAnimationFrame(draw);
+}
+
+// User controls (Touch & Mouse input)
+function handleStart(x, y) {
+    let dx = x - ballX;
+    let dy = y - ballY;
+    if (Math.sqrt(dx * dx + dy * dy) < ballRadius + 20) {
+        isDragging = true;
+        startX = ballX;
+        startY = ballY;
+    }
+}
+function handleMove(x, y) {
+    if (isDragging) {
+        // Drag limit distance
+        ballX = Math.max(20, Math.min(x, canvas.width / 2));
+        ballY = Math.max(basketY + 50, Math.min(y, canvas.height - 20));
+    }
+}
+function handleEnd() {
+    if (isDragging) {
+        isDragging = false;
+        isShot = true;
+        // Projectile release speed calculated from release vector
+        ballVx = (startX - ballX) * 0.16;
+        ballVy = (startY - ballY) * 0.16;
+    }
+}
+
+// Attach Event Listeners
+canvas.addEventListener('mousedown', (e) => {
+    let rect = canvas.getBoundingClientRect();
+    handleStart(e.clientX - rect.left, e.clientY - rect.top);
+});
+canvas.addEventListener('mousemove', (e) => {
+    let rect = canvas.getBoundingClientRect();
+    handleMove(e.clientX - rect.left, e.clientY - rect.top);
+});
+canvas.addEventListener('mouseup', () => handleEnd());
+
+canvas.addEventListener('touchstart', (e) => {
+    let rect = canvas.getBoundingClientRect();
+    let touch = e.touches[0];
+    handleStart(touch.clientX - rect.left, touch.clientY - rect.top);
+});
+canvas.addEventListener('touchmove', (e) => {
+    let rect = canvas.getBoundingClientRect();
+    let touch = e.touches[0];
+    handleMove(touch.clientX - rect.left, touch.clientY - rect.top);
+});
+canvas.addEventListener('touchend', () => handleEnd());
+
+window.addEventListener('resize', () => {
+    resizeCanvas();
+});
+
+function resetGameScore() {
+    score = 0;
+    document.getElementById('gameScore').innerText = score;
+}
+
+/* Interactive Vibe Matcher Questionnaire Quiz script */
+const quizQuestions = [
+    {
+        q: "What is your primary source of creative inspiration?",
+        opts: [
+            { text: "Weaving cozy wool loops", value: "crochet" },
+            { text: "Vibrant paint splashes", value: "paint" },
+            { text: "Scoring three-pointers on court", value: "sports" },
+            { text: "Listening to classic chimes", value: "dance" }
+        ]
+    },
+    {
+        q: "Choose your favorite destination terrain:",
+        opts: [
+            { text: "Historic temple cities", value: "nashik" },
+            { text: "Supersonic skies above", value: "airforce" },
+            { text: "Majestic snowy peak summits", value: "kashmir" },
+            { text: "Deep open blue oceans", value: "navy" }
+        ]
+    }
+];
+
+let quizAnswers = [];
+let quizStep = 0;
+
+function renderQuiz() {
+    const qBody = document.getElementById('quizStepBody');
+    if (quizStep >= quizQuestions.length) {
+        showQuizResult();
+        return;
+    }
+    const currentQ = quizQuestions[quizStep];
+    document.getElementById('quizQuestion').innerText = currentQ.q;
+    
+    let html = "";
+    currentQ.opts.forEach((opt, idx) => {
+        html += `<button onclick="recordAnswer('${opt.value}')" class="p-3 bg-white/10 hover:bg-white/20 border border-white/20 hover:border-white/50 text-white rounded-xl text-xs font-bold transition duration-200">${opt.text}</button>`;
+    });
+    document.getElementById('quizOptions').innerHTML = html;
+}
+
+function recordAnswer(val) {
+    quizAnswers.push(val);
+    quizStep++;
+    renderQuiz();
+}
+
+function showQuizResult() {
+    const resultBox = document.getElementById('quizStepBody');
+    let title = "";
+    let desc = "";
+    
+    // Evaluate personality based on choices
+    if (quizAnswers.includes('crochet') || quizAnswers.includes('paint')) {
+        title = "🧶 You are Viva's Art & Craft Studio Soul!";
+        desc = "Your spirit thrives inside beautiful textures, cozy wool threads, and canvas paintings. Today is a perfect day to plan a crochet project or start sketching landscapes!";
+    } else if (quizAnswers.includes('sports') || quizAnswers.includes('airforce')) {
+        title = "⚡ You are Viva's Tactical Action Commander!";
+        desc = "Your high energy levels match the speed of fighter jets or intense basketball dribble drills. Get outside and shoot some real hoops, or plan strategies!";
+    } else {
+        title = "💃 You are Viva's Rhythmic Cultural Dancer!";
+        desc = "Your feet match the grace of classical Kathak ghungroos and beautiful local temple travels. Strap on your rhythms, start the Teental loop above, and feel the beats!";
+    }
+    
+    resultBox.innerHTML = `
+        <h4 class="font-bold text-lg text-amber-300 mb-2">${title}</h4>
+        <p class="text-xs text-neutral-200 max-w-md mx-auto leading-relaxed mb-4">${desc}</p>
+        <button onclick="resetQuiz()" class="px-6 py-2 bg-gradient-to-r from-orange-500 to-amber-500 text-white font-bold rounded-full text-xs shadow-md">Restart Quiz</button>
+    `;
+}
+
+function resetQuiz() {
+    quizAnswers = [];
+    quizStep = 0;
+    renderQuiz();
+}
+
+// Initialise quiz on start
+renderQuiz();
+</script>
+</body>
+</html>
